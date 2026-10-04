@@ -35,7 +35,7 @@ const contactModes = [
 ];
 
 const fieldCls =
-  "h-12 w-full rounded-xl border border-transparent bg-frost px-4 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-brand focus:bg-white";
+  "h-12 w-full rounded-xl border border-transparent bg-frost px-4 text-base text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-brand focus:bg-white";
 
 function Label({ children, optional }) {
   return (
