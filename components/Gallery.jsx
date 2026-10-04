@@ -91,7 +91,7 @@ export default function Gallery() {
       {/* Lightbox */}
       {active !== null && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-navy-deep/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-gradient-to-b from-navy-deep/85 to-navy-deep/95 p-4"
           onClick={() => setActive(null)}
           role="dialog"
           aria-modal="true"

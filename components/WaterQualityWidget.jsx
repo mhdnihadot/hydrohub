@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useInView } from "./motion";
 
 // Water-quality meter: purity score (0–100, higher is better) per test, for tap vs filtered vs HydroHub water.
@@ -15,6 +15,16 @@ export default function WaterQualityWidget() {
   const [source, setSource] = useState("HydroHub");
   const [ref, inView] = useInView({ threshold: 0.3 });
   const { purity, levels } = sources[source];
+  const tabRefs = useRef({});
+  const underline = useRef(null);
+
+  // Slide the underline to the active tab (written straight to the DOM — no re-render needed)
+  useLayoutEffect(() => {
+    const tab = tabRefs.current[source];
+    if (!tab || !underline.current) return;
+    underline.current.style.width = `${tab.offsetWidth}px`;
+    underline.current.style.transform = `translateX(${tab.offsetLeft}px)`;
+  }, [source]);
 
   return (
     <div
@@ -31,18 +41,22 @@ export default function WaterQualityWidget() {
         <span className="text-[10px] font-medium uppercase tracking-wider text-muted">Live</span>
       </div>
 
-      <div className="mb-4 flex items-center gap-4 text-[11px]">
+      <div className="relative mb-4 flex items-center gap-4 text-[11px]">
         {Object.keys(sources).map((s) => (
           <button
             key={s}
+            ref={(el) => (tabRefs.current[s] = el)}
             onClick={() => setSource(s)}
-            className={`pb-0.5 transition-colors ${
-              source === s ? "border-b-2 border-brand font-bold text-ink" : "font-medium text-muted hover:text-ink"
-            }`}
+            className={`pb-1 font-semibold transition-colors duration-300 ${source === s ? "text-ink" : "text-muted hover:text-ink"}`}
           >
             {s}
           </button>
         ))}
+        <span
+          ref={underline}
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 h-0.5 rounded-full bg-brand transition-[transform,width] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        />
       </div>
 
       <div className="flex h-28 items-end justify-between gap-2.5">
