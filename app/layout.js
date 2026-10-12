@@ -29,11 +29,11 @@ const satoshi = localFont({
 
 export const metadata = {
   title: {
-    default: "Hydro Hub Industries — It all starts with water",
+    default: "Hydro Hub Industries — OEM water filter manufacturing",
     template: "%s · Hydro Hub",
   },
   description:
-    "SIA, India's 1st Dual Hardness Technology shower & tap filter. Reduces hair-fall, protects skin and prevents bacteria. Made in India by Hydro Hub Industries.",
+    "Hydro Hub Industries develops and manufactures water-related products for OEM brands: in-house R&D, product development and manufacturing in a 16,500 sq ft factory in Kerala, India.",
 };
 
 export const viewport = {

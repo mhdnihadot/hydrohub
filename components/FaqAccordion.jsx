@@ -7,24 +7,24 @@ import { Reveal, TextReveal } from "./motion";
 
 const faqs = [
   {
-    q: "Why filter water I don't drink?",
-    a: "97% of the water you use at home is for bathing, washing and cleaning. Hard water minerals, chlorine and heavy metals in that water dry out skin, cause hair fall and dull your fabrics. Shampoo and skincare can only do so much when the water itself is the problem.",
-  },
-  {
-    q: "Will SIA fit my shower or tap?",
-    a: "Yes. SIA uses standard ½″ brass connectors that fit most modern showers and taps, and you can fit it yourself with ease.",
-  },
-  {
-    q: "How often do I replace the cartridge?",
-    a: "Every 25,000 litres or 6 months, whichever comes first. Replacement cartridges are easily available and customised for your region's water.",
-  },
-  {
-    q: "How is SIA different from cheaper imported filters?",
-    a: "Most imports are generic designs for Western markets that only filter chlorine. SIA has 5 layers made for Indian water: it also neutralises and conditions hard water salts. It comes with brass connectors instead of plastic and a 2.5-year warranty.",
-  },
-  {
     q: "Do you manufacture for other brands?",
-    a: "Yes. Since 2019 we've run a 16,500 sq ft factory with a production capacity of 10,00,000, and we manufacture for clients including Eureka Forbes (Aquaguard). Send us an enquiry for bulk or OEM orders.",
+    a: "Yes, that's our core business. Since 2019 we've developed and manufactured water products for OEM brands, including Eureka Forbes (Aquaguard), from our own 16,500 sq ft factory.",
+  },
+  {
+    q: "Can you build to our own design?",
+    a: "Yes. Our dedicated engineers develop custom designs to your specification, backed by in-house R&D led by a dedicated Dr., at a reasonable price.",
+  },
+  {
+    q: "What do you make in-house?",
+    a: "Everything. We run injection moulding, pressing and punching, CNC and VMC machining, and ultrasonic welding, with 5 assembly lines taking each product from raw part to finished product.",
+  },
+  {
+    q: "How much can you produce?",
+    a: "Our factory has a production capacity of 10,00,000. Tell us your volumes when you enquire and we'll plan your order around them.",
+  },
+  {
+    q: "What products can you manufacture?",
+    a: "Any water-related product. We're not limited to one product: our R&D team and engineers can develop and manufacture to your brief. Today we make 5-layer shower & tap filters and cartridges, and we're developing washing machine filters, whole-house filters, shower heads and hard water care products.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function FaqAccordion() {
               />
               <Reveal delay={250}>
                 <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65 sm:text-base">
-                  Clear answers to the most common questions about SIA, cartridges and working with us.
+                  Clear answers for brands looking for a water filter manufacturing partner.
                 </p>
               </Reveal>
             </div>

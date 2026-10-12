@@ -1,46 +1,20 @@
 import Link from "next/link";
-import { ArrowRight, Waves, Droplets, ShieldCheck, Layers, Sparkle, CalendarClock, Award, Wrench, Leaf, BadgeCheck } from "lucide-react";
+import { ArrowRight, Waves, ShieldCheck, CalendarClock, Layers } from "lucide-react";
 import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
 
-// Trust points from the company profile
-const partners = [
-  { name: "Manufacturing for Eureka Forbes · Aquaguard", Icon: Waves },
-  { name: "Made in India", Icon: Award },
-  { name: "NSF & WQA certified media", Icon: ShieldCheck },
-  { name: "5-layer filtration", Icon: Layers },
-  { name: "2.5-year warranty", Icon: BadgeCheck },
-  { name: "Brass connectors", Icon: Wrench },
-  { name: "BPA-free", Icon: Leaf },
-  { name: "25,000 L cartridge", Icon: Droplets },
-  { name: "#TheNaturalWay", Icon: Sparkle },
+const facts = [
+  { Icon: Layers, label: "Filtration", value: "5 layers", note: "Made for Indian water" },
+  { Icon: CalendarClock, label: "Cartridge life", value: "25,000 L", note: "or 6 months · easy replacements" },
+  { Icon: ShieldCheck, label: "Warranty", value: "2.5 years", note: "Brass connectors built to last" },
 ];
 
 export default function PartnerTicker() {
   return (
     <section id="service" className="py-16 sm:py-24">
       <Container>
-        {/* Trust badge */}
-        <Reveal className="flex justify-center">
-          <div className="rounded-full border border-line bg-frost px-4 py-2 text-center text-xs font-medium text-ink/80 sm:px-5 sm:text-sm">
-            India&apos;s 1st Dual Hardness Technology shower &amp; tap filter
-          </div>
-        </Reveal>
-
-        {/* Logo marquee */}
-        <Reveal delay={150} className="mask-fade-x relative mt-8 overflow-hidden py-3">
-          <div className="animate-marquee items-center gap-12 text-navy sm:gap-16">
-            {[...partners, ...partners].map(({ name, Icon }, i) => (
-              <div key={i} className="flex items-center gap-2 whitespace-nowrap opacity-80 transition-opacity hover:opacity-100">
-                <Icon className="h-6 w-6" strokeWidth={1.5} />
-                <span className="text-lg font-bold tracking-tight sm:text-xl">{name}</span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
         {/* Sub-hero */}
-        <div className="mt-16 grid grid-cols-1 items-stretch gap-10 sm:mt-24 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="flex flex-col justify-between lg:col-span-5">
             <div>
             <TextReveal
@@ -78,64 +52,31 @@ export default function PartnerTicker() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-7 lg:gap-5">
-            {/* Light water card */}
-            <Reveal delay={150} variant="scale" className="h-full">
-              <div className="flex h-full min-h-[260px] flex-col justify-between rounded-2xl bg-sky p-6 transition-shadow sm:p-7">
-                <div>
-                  <h3 className="text-2xl font-semibold leading-tight tracking-tight text-ink">
-                    Shower & tap filter for hair and skin
-                  </h3>
-                  <ul className="mt-5 space-y-2 text-xs leading-relaxed text-muted">
-                    <li className="flex gap-2">
-                      <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" strokeWidth={1.5} />
-                      Reduces chlorine & conditions hardness salts
-                    </li>
-                    <li className="flex gap-2">
-                      <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" strokeWidth={1.5} />
-                      Fits standard ½″ shower & tap fittings
-                    </li>
-                  </ul>
-                </div>
-                <Link
-                  href="/products?category=shower-tap"
-                  className="mt-6 inline-flex w-fit items-center gap-2 whitespace-nowrap rounded-full bg-brand px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-brand-hover"
-                >
-                  View filters <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-                </Link>
-              </div>
-            </Reveal>
+          {/* Mission card — fills the right side */}
+          <Reveal delay={200} variant="scale" className="h-full lg:col-span-7">
+            <div className="relative flex h-full min-h-[340px] flex-col justify-between gap-10 overflow-hidden rounded-2xl bg-navy p-6 text-white sm:p-10">
+              <Waves className="pointer-events-none absolute -right-8 -top-8 h-56 w-56 text-white/[0.05]" strokeWidth={1} />
 
-            {/* Navy card */}
-            <Reveal delay={300} variant="scale" className="h-full">
-              <div className="relative flex h-full min-h-[300px] flex-col justify-between overflow-hidden rounded-2xl bg-navy p-6 text-white sm:min-h-[340px] sm:p-7">
-                <Waves className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-white/[0.05]" strokeWidth={1} />
-
-                <div className="relative space-y-3">
-                  <div className="w-fit rounded-2xl bg-white/10 p-3">
-                    <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-navy">
-                      <CalendarClock className="h-3 w-3" strokeWidth={1.5} /> Cartridge life
-                    </span>
-                    <div className="text-sm font-semibold">25,000 L / 6 months</div>
-                    <div className="text-[11px] text-white/60">Replacements easily available</div>
-                  </div>
-                  <div className="ml-auto w-fit rounded-2xl border border-white/10 bg-navy-soft p-3">
-                    <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-aqua px-2.5 py-1 text-[10px] font-semibold text-navy">
-                      <ShieldCheck className="h-3 w-3" strokeWidth={1.5} /> Warranty
-                    </span>
-                    <div className="text-sm font-semibold">2.5 years</div>
-                    <div className="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-white/15">
-                      <div className="h-full w-[78%] rounded-full bg-aqua" />
-                    </div>
-                  </div>
-                </div>
-
-                <h3 className="relative mt-6 text-2xl font-semibold leading-tight tracking-tight text-white">
-                  Good water for good life, affordable & accessible to everyone
+              <div className="relative">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-aqua">Our mission</span>
+                <h3 className="mt-4 max-w-lg text-[28px] font-semibold leading-[1.15] tracking-tight sm:text-4xl">
+                  Good water for good life, affordable &amp; accessible to everyone
                 </h3>
               </div>
-            </Reveal>
-          </div>
+
+              <ul className="relative grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {facts.map(({ Icon, label, value, note }, i) => (
+                  <Reveal as="li" key={label} delay={350 + i * 120} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-navy">
+                      <Icon className="h-3 w-3" strokeWidth={1.5} /> {label}
+                    </span>
+                    <div className="mt-3 font-display text-lg font-semibold">{value}</div>
+                    <div className="text-[11px] text-white/60">{note}</div>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>

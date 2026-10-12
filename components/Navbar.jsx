@@ -9,6 +9,7 @@ import Container from "./Container";
 import EnquireButton from "./EnquireButton";
 
 const links = [
+  { label: "How we work", href: "/#process" },
   { label: "Products", href: "/products" },
   { label: "Gallery", href: "/#gallery" },
   { label: "About", href: "/about" },
@@ -69,9 +70,13 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href="tel:+917406616220" className="hidden text-sm font-medium text-ink lg:inline-block lg:pr-4">
-              +91 74066 16220
-            </a>
+            <EnquireButton
+              interest="Bulk / OEM"
+              arrow={false}
+              className="hidden items-center rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand hover:text-brand lg:inline-flex"
+            >
+              Bulk / OEM
+            </EnquireButton>
             <EnquireButton
               arrow={false}
               className="hidden items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-hover sm:inline-flex"

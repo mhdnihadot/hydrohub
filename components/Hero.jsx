@@ -1,6 +1,6 @@
 import Image from "next/image";
-import WaterQualityWidget from "./WaterQualityWidget";
 import EnquireButton from "./EnquireButton";
+import HeroFactCard from "./HeroFactCard";
 import Link from "next/link";
 import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
@@ -38,8 +38,8 @@ export default function Hero() {
 
               <Reveal delay={700}>
                 <p className="mt-5 max-w-md text-[15px] font-medium leading-relaxed text-white/90 sm:text-base">
-                  97% of the water you use isn&apos;t for drinking or cooking. SIA filters the water you shower,
-                  wash and clean with, for healthier hair, skin and home.
+                  <span className="font-semibold text-white">Water filter products, manufactured for leading OEM brands.</span>{" "}
+                  Researched, engineered and built at scale in our own factory, ready to carry your name.
                 </p>
               </Reveal>
 
@@ -48,18 +48,18 @@ export default function Hero() {
                   Enquire now
                 </EnquireButton>
                 <Link
-                  href="/products"
+                  href="/#process"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/40 bg-navy-deep/40 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-deep/60"
                 >
-                  Shop products
+                  How we work
                 </Link>
               </Reveal>
             </div>
 
-            {/* Water-quality card */}
-            <div className="flex lg:col-span-5 lg:justify-end">
-              <Reveal variant="right" delay={500} className="w-full max-w-[320px]">
-                <WaterQualityWidget />
+            {/* Key facts card */}
+            <div className="hidden sm:flex lg:col-span-5 lg:justify-end">
+              <Reveal variant="right" delay={500} className="w-full max-w-[300px]">
+                <HeroFactCard />
               </Reveal>
             </div>
           </div>

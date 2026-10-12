@@ -11,10 +11,10 @@ import { getProduct } from "@/data/products";
 
 // Hard-water problem → the products that fix it (from the company profile)
 const concerns = [
-  { label: "Hair fall", fix: ["sia-shower-tap-filter", "sia-hard-water-shampoo"] },
-  { label: "Frizzy, dull hair", fix: ["sia-hard-water-shampoo", "sia-boar-bristle-brush"] },
-  { label: "Dry, itchy skin", fix: ["sia-shower-tap-filter", "sia-hard-water-shower-gel"] },
-  { label: "Chlorine smell", fix: ["sia-shower-tap-filter"] },
+  { label: "Hair fall", fix: ["shower-tap-filter", "hard-water-shampoo"] },
+  { label: "Frizzy, dull hair", fix: ["hard-water-shampoo", "boar-bristle-brush"] },
+  { label: "Dry, itchy skin", fix: ["shower-tap-filter", "hard-water-shower-gel"] },
+  { label: "Chlorine smell", fix: ["shower-tap-filter"] },
   { label: "Fabric losing softness", fix: ["washing-machine-filter", "hard-water-liquid-detergent"] },
   { label: "Hard water in every tap", fix: ["point-of-entry-filter"] },
 ];
@@ -83,7 +83,7 @@ export default function InteractiveCalculator() {
                 {routine.map((p) => (
                   <li key={p.slug}>
                     <Link
-                      href={`/products/${p.slug}`}
+                      href={`/products?category=${p.category}`}
                       className="group flex items-center gap-4 rounded-2xl border border-line bg-white p-3 pr-4 transition-colors hover:border-ink/20"
                     >
                       <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">

@@ -19,12 +19,12 @@ import {
 import { products } from "@/data/products";
 
 const interests = [
+  { label: "Bulk / OEM", Icon: Factory },
+  { label: "Custom design", Icon: Wrench },
   { label: "Shower filter", Icon: ShowerHead },
   { label: "Cartridge", Icon: Filter },
   { label: "Hair & body", Icon: Sparkles },
   { label: "Laundry / home", Icon: WashingMachine },
-  { label: "Bulk / OEM", Icon: Factory },
-  { label: "Support", Icon: Wrench },
 ];
 const interestFor = { "shower-tap": "Shower filter", "hair-body": "Hair & body", laundry: "Laundry / home", "whole-home": "Laundry / home" };
 
@@ -47,9 +47,9 @@ function Label({ children, optional }) {
 }
 
 // Enquiry form: interest, name, phone, preferred contact, email, product, message.
-export default function EnquiryForm({ defaultProduct = "", onDone, compact = false }) {
+export default function EnquiryForm({ defaultProduct = "", defaultInterest = "", onDone, compact = false }) {
   const [interest, setInterest] = useState(
-    () => interestFor[products.find((p) => p.name === defaultProduct)?.category] || ""
+    () => defaultInterest || interestFor[products.find((p) => p.name === defaultProduct)?.category] || ""
   );
   const [contact, setContact] = useState("Call");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error

@@ -6,15 +6,16 @@ import EnquiryForm from "./EnquiryForm";
 
 const EXIT_MS = 280;
 
-// Open from anywhere with openEnquiry() (see EnquireButton) — optionally pre-selecting a product.
-export function openEnquiry(product = "") {
-  window.dispatchEvent(new CustomEvent("open-enquiry", { detail: { product } }));
+// Open from anywhere with openEnquiry() (see EnquireButton) — optionally pre-selecting a product or interest.
+export function openEnquiry(product = "", interest = "") {
+  window.dispatchEvent(new CustomEvent("open-enquiry", { detail: { product, interest } }));
 }
 
 export default function EnquiryModal() {
   const [mounted, setMounted] = useState(false); // in the DOM
   const [shown, setShown] = useState(false); // animated "in" state
   const [product, setProduct] = useState("");
+  const [interest, setInterest] = useState("");
   const [formKey, setFormKey] = useState(0);
   const closeTimer = useRef(null);
 
@@ -22,6 +23,7 @@ export default function EnquiryModal() {
     const onOpen = (e) => {
       clearTimeout(closeTimer.current);
       setProduct(e.detail?.product || "");
+      setInterest(e.detail?.interest || "");
       setFormKey((k) => k + 1);
       setMounted(true);
       // wait a frame so the "from" state paints before transitioning in
@@ -93,7 +95,7 @@ export default function EnquiryModal() {
             <X className="h-4 w-4" strokeWidth={1.5} />
           </button>
         </div>
-        <EnquiryForm key={formKey} defaultProduct={product} onDone={close} compact />
+        <EnquiryForm key={formKey} defaultProduct={product} defaultInterest={interest} onDone={close} compact />
       </div>
     </div>
   );

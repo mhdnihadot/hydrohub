@@ -19,16 +19,16 @@ export default function EnquirySection() {
             <div className="flex h-full flex-col justify-between gap-10 rounded-3xl bg-navy p-6 text-white sm:p-10">
               <div>
                 <TextReveal
-                  lines={["Let's fix your", "*water* together"]}
+                  lines={["Let's build your", "*next* product"]}
                   accentClass="text-aqua"
                   className="text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-4xl"
                 />
                 <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
-                  Buying for your home, stocking SIA, or looking for a manufacturing partner? Leave your details and the
+                  Looking for a manufacturing partner for your water filter brand? Leave your details and the
                   Hydro Hub team will call you back within one working day.
                 </p>
                 <ol className="mt-8 space-y-4 border-t border-white/10 pt-6">
-                  {["We call you back", "We find the right fix for your water", "You fit it yourself in minutes"].map((step, i) => (
+                  {["We call you back", "We scope your design & volumes", "We build it in our factory"].map((step, i) => (
                     <li key={step} className="flex items-center gap-3 text-sm">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/25 text-[11px] font-semibold">
                         {i + 1}

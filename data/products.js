@@ -1,7 +1,7 @@
 // Product catalogue — edit here. Content follows the Hydro Hub Industries company profile.
-// Cards and product pages show `image` if set, otherwise the first `gallery` photo.
-// `gallery` = "in use" lifestyle photos shown on the product page; `highlights` = spec keys shown as chips/tiles.
-// Only the SIA filter and its cartridge are on sale today. "Launching next" / "Coming soon" products are on the
+// Cards show `image` if set, otherwise the first `gallery` photo. `highlights` = spec keys shown as chips.
+// There are no product detail pages; cards open the enquiry form.
+// Only the shower & tap filter and its cartridge are on sale today. "Launching next" / "Coming soon" products are on the
 // roadmap — enquiries register interest.
 
 export const categories = [
@@ -29,14 +29,14 @@ export const categories = [
 
 export const products = [
   {
-    slug: "sia-shower-tap-filter",
+    slug: "shower-tap-filter",
     category: "shower-tap",
-    name: "SIA Shower & Tap Filter",
+    name: "Hydro Hub Shower & Tap Filter",
     highlights: ["Filter layers", "Cartridge life", "Warranty"],
     gallery: ["/images/gallery/spray.jpg", "/images/gallery/droplet.jpg"],
     summary: "India's 1st Dual Hardness Technology shower & tap filter. Reduces hair-fall, protects skin and prevents bacteria.",
     description:
-      "SIA is a 5-layer filter built for Indian water conditions. It reduces chlorine, lead, mercury and other heavy metals, neutralises and conditions hard water salts, and removes smell, micro-impurities and sediment. The result is clean, healthy water for better hair and skin. It is made in India from BPA-free food-grade plastic, uses NSF & WQA certified media, and its brass connectors fit standard ½″ shower and tap fittings.",
+      "Our shower & tap filter is a 5-layer filter built for Indian water conditions. It reduces chlorine, lead, mercury and other heavy metals, neutralises and conditions hard water salts, and removes smell, micro-impurities and sediment. The result is clean, healthy water for better hair and skin. It is made in India from BPA-free food-grade plastic, uses NSF & WQA certified media, and its brass connectors fit standard ½″ shower and tap fittings.",
     features: [
       "Smart 5-layer filter for Indian water",
       "Dual Hardness Technology: neutralises & conditions hard water salts",
@@ -59,16 +59,16 @@ export const products = [
     },
   },
   {
-    slug: "sia-replacement-cartridge",
+    slug: "replacement-cartridge",
     category: "shower-tap",
-    name: "SIA Replacement Cartridge",
+    name: "Replacement Cartridge",
     highlights: ["Layers", "Life", "Fits"],
     gallery: ["/images/gallery/droplet.jpg", "/images/gallery/spray.jpg"],
-    summary: "Replacement 5-layer cartridge for your SIA filter, customised for regional water.",
+    summary: "Replacement 5-layer cartridge for your Hydro Hub filter, customised for regional water.",
     description:
-      "Swap in a fresh cartridge every 25,000 litres or six months to keep your SIA filter working at its best. Cartridges are customised for regional water conditions and easy to get hold of, so you never have to settle for a generic replacement.",
+      "Swap in a fresh cartridge every 25,000 litres or six months to keep your filter working at its best. Cartridges are customised for regional water conditions and easy to get hold of, so you never have to settle for a generic replacement.",
     features: ["Same 5-layer filtration as new", "Customised for regional water", "Easily available", "Quick swap, no tools"],
-    specs: { Layers: "5", Life: "25,000 L / 6 months", Fits: "SIA Shower & Tap Filter", Origin: "Made in India" },
+    specs: { Layers: "5", Life: "25,000 L / 6 months", Fits: "Hydro Hub filter", Origin: "Made in India" },
   },
   {
     slug: "rain-multi-flow-shower",
@@ -77,22 +77,22 @@ export const products = [
     highlights: ["Status", "Use", "Pairs with"],
     badge: "Coming soon",
     gallery: ["/images/gallery/spray.jpg", "/images/gallery/splash.jpg"],
-    summary: "Rain and multi-flow shower heads designed to pair with SIA filtration.",
+    summary: "Rain and multi-flow shower heads designed to pair with our shower filter.",
     description:
-      "Our upcoming range of rain and multi-flow showers is designed to work with the SIA filter, for a better shower in every way. Enquire to be told when it launches.",
-    features: ["Rain & multi-flow options", "Designed to pair with SIA", "Standard bath fittings"],
-    specs: { Status: "Coming soon", Use: "Bathroom", "Pairs with": "SIA filter" },
+      "Our upcoming range of rain and multi-flow showers is designed to work with our shower filter, for a better shower in every way. Enquire to be told when it launches.",
+    features: ["Rain & multi-flow options", "Designed to pair with our filter", "Standard bath fittings"],
+    specs: { Status: "Coming soon", Use: "Bathroom", "Pairs with": "Shower filter" },
   },
   {
-    slug: "sia-hard-water-shampoo",
+    slug: "hard-water-shampoo",
     category: "hair-body",
-    name: "Sia Hard Water Shampoo",
+    name: "Hard Water Shampoo",
     highlights: ["Volume", "Key actives", "Free from"],
     badge: "Launching next",
     gallery: ["/images/hero.jpg", "/images/gallery/splash.jpg"],
     summary: "No more bad hair days. Rare Blue Clay, Bamboo Vinegar & Argan Oil for hair exposed to hard water.",
     description:
-      "Hard water minerals build up on your scalp and clog hair follicles, leaving hair dull, lifeless and frizzy after a shower. Rare Blue Clay and Bamboo Vinegar exfoliate and prevent that build-up for silky, bouncy hair, and Argan Oil restores natural moisture. Made with all-natural bio-actives. For best results, use it with the SIA Shower & Tap Filter.",
+      "Hard water minerals build up on your scalp and clog hair follicles, leaving hair dull, lifeless and frizzy after a shower. Rare Blue Clay and Bamboo Vinegar exfoliate and prevent that build-up for silky, bouncy hair, and Argan Oil restores natural moisture. Made with all-natural bio-actives. For best results, use it with our shower & tap filter.",
     features: [
       "Neutralises hard water",
       "Removes mineral build-up",
@@ -106,33 +106,33 @@ export const products = [
       "Key actives": "Blue Clay, Bamboo Vinegar, Argan Oil",
       "Free from": "Sulphates & parabens",
       "How to use": "Wet hair, massage into scalp, leave 2–3 min, rinse",
-      "Best with": "SIA Shower & Tap Filter",
+      "Best with": "Shower & tap filter",
       Origin: "Made in India",
     },
   },
   {
-    slug: "sia-hard-water-shower-gel",
+    slug: "hard-water-shower-gel",
     category: "hair-body",
-    name: "Sia Hard Water Shower Gel",
+    name: "Hard Water Shower Gel",
     highlights: ["Status", "Use", "Pairs with"],
     badge: "Coming soon",
     gallery: ["/images/gallery/splash.jpg", "/images/gallery/spray.jpg"],
     summary: "A body wash made for hard water, so skin isn't left dry after your daily shower.",
     description:
-      "The Sia Hard Water Shower Gel follows our shampoo, made for skin that hard water leaves dry, tight or flaky. Enquire to be told when it launches.",
-    features: ["Made for hard water", "Natural bio-actives", "Pairs with the Sia shampoo & SIA filter"],
-    specs: { Status: "Coming soon", Use: "Body", "Pairs with": "SIA filter" },
+      "Our Hard Water Shower Gel follows our shampoo, made for skin that hard water leaves dry, tight or flaky. Enquire to be told when it launches.",
+    features: ["Made for hard water", "Natural bio-actives", "Pairs with our shampoo & shower filter"],
+    specs: { Status: "Coming soon", Use: "Body", "Pairs with": "Shower filter" },
   },
   {
-    slug: "sia-boar-bristle-brush",
+    slug: "boar-bristle-brush",
     category: "hair-body",
-    name: "Sia Boar Bristle Brush",
+    name: "Boar Bristle Brush",
     highlights: ["Bristles", "Use", "Routine step"],
     badge: "Coming soon",
     gallery: ["/images/hero.jpg", "/images/gallery/droplet.jpg"],
-    summary: "Brush away leftover minerals and pollutants for a natural bounce. Step 3 of the Sia routine.",
+    summary: "Brush away leftover minerals and pollutants for a natural bounce. Step 3 of the hard water routine.",
     description:
-      "Softer than silk. Run the brush through your hair to remove any minerals or pollutants left behind, and bring back your hair's natural bounce. It's the final step of the Sia routine, after the shower filter and the hard water shampoo.",
+      "Softer than silk. Run the brush through your hair to remove any minerals or pollutants left behind, and bring back your hair's natural bounce. It's the final step of our hard water routine, after the shower filter and the hard water shampoo.",
     features: ["Natural boar bristles", "Lifts leftover minerals & pollutants", "Gives hair a natural bounce"],
     specs: { Bristles: "Boar", Use: "Daily, after washing", "Routine step": "3 of 3" },
   },

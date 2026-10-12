@@ -60,28 +60,6 @@ h1, h2, h3, h4 {
   color: #FFFFFF;
 }
 
-/* Marquee (partner logos) */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Fade logos out at the container edges */
-.mask-fade-x {
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-}
-
 /* Infinite tag rows in the bento card */
 @keyframes tags-left {
   0% { transform: translateX(0); }
@@ -270,7 +248,7 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
 }
 
 /* Reduced motion (iOS "Reduce Motion", Android "Remove animations" / battery saver):
-   drop movement (slides, zoom, marquee) but keep gentle fades so the page still feels alive. */
+   drop movement (slides, zoom, scrolling tags) but keep gentle fades so the page still feels alive. */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal[data-variant] {
@@ -299,7 +277,6 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
   }
 
   .hero-zoom,
-  .animate-marquee,
   .animate-tags-left,
   .animate-tags-right {
     animation: none;

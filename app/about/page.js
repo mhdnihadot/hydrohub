@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import EnquirySection from "@/components/EnquirySection";
 import EnquireButton from "@/components/EnquireButton";
+import ProcessSection from "@/components/ProcessSection";
 import { Reveal, TextReveal, CountUp } from "@/components/motion";
 
 export const metadata = {
@@ -26,7 +27,7 @@ const values = [
 ];
 
 const steps = [
-  { n: "01", title: "SIA Shower & Tap Filter", text: "Fit it to your existing shower or tap. It removes chlorine, neutralises hard water and filters heavy metals." },
+  { n: "01", title: "Shower & Tap Filter", text: "Fit it to your existing shower or tap. It removes chlorine, neutralises hard water and filters heavy metals." },
   { n: "02", title: "Hard Water Shampoo & Shower Gel", text: "No more dry or frizzy hair and skin after your daily shower." },
   { n: "03", title: "Boar Bristle Brush", text: "Lifts leftover minerals and pollutants and gives hair a natural bounce." },
   { n: "04", title: "Share your routine", text: "Post it on Instagram or X with #NoMoreBadHairDays #TheNaturalWay." },
@@ -70,6 +71,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <ProcessSection withFacts={false} />
+
       {/* Stats */}
       <section className="pb-16 sm:pb-24">
         <Container>
@@ -99,7 +102,7 @@ export default function AboutPage() {
                   Our factory manufactures shower &amp; tap water filters for leading brands. Enquire about bulk and OEM orders.
                 </p>
               </div>
-              <EnquireButton className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
+              <EnquireButton interest="Bulk / OEM" className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover">
                 Bulk / OEM enquiry
               </EnquireButton>
             </div>
@@ -136,7 +139,7 @@ export default function AboutPage() {
           <div className="rounded-2xl bg-sky p-6 sm:p-10 lg:p-14">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <TextReveal
-                lines={["The Sia routine"]}
+                lines={["The hard water routine"]}
                 className="text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
               />
               <Reveal delay={150}>

@@ -8,7 +8,7 @@ import { categories, products, getCategory } from "@/data/products";
 
 export const metadata = {
   title: "Products",
-  description: "SIA shower & tap filters, hard water hair care and upcoming laundry and whole-home filtration from Hydro Hub.",
+  description: "Water products Hydro Hub designs and manufactures for OEM brands, plus custom products built to your brief.",
 };
 
 export default async function ProductsPage({ searchParams }) {
@@ -23,8 +23,8 @@ export default async function ProductsPage({ searchParams }) {
       <PageHeader
         crumbs={[{ label: "Products", href: active ? "/products" : undefined }, ...(active ? [{ label: active.name }] : [])]}
         eyebrow="Products"
-        title={active ? active.name : "Better water, beyond drinking"}
-        intro={active ? active.tagline : "Filtration for the 97% of your water that isn't for drinking, starting with the SIA shower & tap filter."}
+        title={active ? active.name : "What we manufacture"}
+        intro={active ? active.tagline : "A few of the products we design and build in-house. We develop and manufacture any water-related product, so bring us your idea too."}
       />
 
       <Container>

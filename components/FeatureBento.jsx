@@ -63,7 +63,7 @@ export default function FeatureBento() {
       <Container>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <TextReveal
-            lines={["Hard water, handled from head to toe"]}
+            lines={["Hard water, handled", "from head to toe"]}
             className="max-w-3xl text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
           />
           <Reveal delay={300}>
@@ -84,7 +84,7 @@ export default function FeatureBento() {
                   <Tags items={[...rowA, ...rowB]} />
                 </div>
                 <p className="mt-4 text-xs leading-relaxed text-muted">
-                  Shampoo and skincare can only do so much when the water itself is the problem. SIA treats the water first.
+                  Shampoo and skincare can only do so much when the water itself is the problem. Our filter treats the water first.
                 </p>
               </div>
             </div>
@@ -125,8 +125,8 @@ export default function FeatureBento() {
                 <p className="max-w-sm text-base font-medium leading-snug text-white sm:text-lg">
                   Fit this small wonder to your existing shower or tap with ease. Standard ½″ connectors fit most modern bath fittings.
                 </p>
-                <Link href="/products/sia-shower-tap-filter" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-aqua">
-                  See the SIA filter <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+                <Link href="/products?category=shower-tap" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-aqua">
+                  See the filter <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
                 </Link>
               </div>
             </div>

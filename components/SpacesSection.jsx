@@ -8,14 +8,14 @@ import { Reveal, TextReveal } from "./motion";
 const spaces = [
   {
     title: "Bathroom",
-    text: "Filtered shower water for less hair fall and softer skin, plus the Sia hair care routine.",
-    includes: ["SIA Shower & Tap Filter", "Hard water shampoo (next)", "Rain & multi-flow showers (soon)"],
+    text: "Filtered shower water for less hair fall and softer skin, plus a hard water hair care routine.",
+    includes: ["Shower & Tap Filter", "Hard water shampoo (next)", "Rain & multi-flow showers (soon)"],
     image: "/images/gallery/spray.jpg",
   },
   {
     title: "Kitchen & taps",
     text: "The same 5-layer filter fits your wash basin and kitchen taps for everyday washing and cleaning.",
-    includes: ["SIA on any ½″ tap", "Replacement cartridges", "Whole-house filter (soon)"],
+    includes: ["Filter on any ½″ tap", "Replacement cartridges", "Whole-house filter (soon)"],
     image: "/images/gallery/pouring.jpg",
   },
   {

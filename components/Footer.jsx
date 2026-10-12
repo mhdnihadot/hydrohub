@@ -5,6 +5,7 @@ import { categories } from "@/data/products";
 
 const company = [
   { label: "About us", href: "/about" },
+  { label: "How we work", href: "/#process" },
   { label: "Gallery", href: "/#gallery" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#enquiry" },
@@ -35,8 +36,8 @@ export default function Footer() {
             <div className="col-span-2 sm:col-span-3 lg:col-span-5">
               <Logo light className="h-12" />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-                It all starts with water. Affordable, sustainable, eco-friendly filtration for the 97% of your water that
-                isn&apos;t for drinking. Made in India since 2019.
+                Any water-related product, developed and manufactured for OEM brands. R&amp;D, product development and manufacturing,
+                all in-house. Made in India since 2019.
               </p>
               <div className="mt-6 flex gap-2">
                 {socials.map((s) => (

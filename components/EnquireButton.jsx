@@ -3,13 +3,13 @@
 import { ArrowRight } from "lucide-react";
 import { openEnquiry } from "./EnquiryModal";
 
-export default function EnquireButton({ product = "", children = "Enquire now", className = "", arrow = true, onClick }) {
+export default function EnquireButton({ product = "", interest = "", children = "Enquire now", className = "", arrow = true, onClick }) {
   return (
     <button
       type="button"
       onClick={() => {
         onClick?.();
-        openEnquiry(product);
+        openEnquiry(product, interest);
       }}
       className={className}
     >

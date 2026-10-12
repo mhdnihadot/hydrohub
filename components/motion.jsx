@@ -86,7 +86,8 @@ export function CountUp({ to, from = 0, duration = 1400, decimals = 0, group = f
     const t0 = performance.now();
     let raf;
     const tick = (now) => {
-      const p = Math.min(1, (now - t0) / duration);
+      // rAF timestamps can predate t0 on the first frame; clamp so the value never dips below `start`
+      const p = Math.min(1, Math.max(0, (now - t0) / duration));
       const eased = 1 - Math.pow(1 - p, 3);
       const v = start + (to - start) * eased;
       current.current = v;
