@@ -29,11 +29,11 @@ const satoshi = localFont({
 
 export const metadata = {
   title: {
-    default: "HydroHub — Pure water for fast moving lives",
-    template: "%s · HydroHub",
+    default: "Hydro Hub Industries — It all starts with water",
+    template: "%s · Hydro Hub",
   },
   description:
-    "Water purifiers, dispensers, filters and bottles for homes and offices — installed in 24 hours, monitored for life.",
+    "SIA, India's 1st Dual Hardness Technology shower & tap filter. Reduces hair-fall, protects skin and prevents bacteria. Made in India by Hydro Hub Industries.",
 };
 
 export const viewport = {

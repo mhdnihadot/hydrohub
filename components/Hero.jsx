@@ -29,7 +29,7 @@ export default function Hero() {
             <div className="flex flex-col items-start lg:col-span-7">
               <TextReveal
                 as="h1"
-                lines={["Pure water for", "fast-moving *lives*"]}
+                lines={["It all starts", "with *water*"]}
                 accentClass="text-aqua"
                 delay={250}
                 step={90}
@@ -38,14 +38,14 @@ export default function Hero() {
 
               <Reveal delay={700}>
                 <p className="mt-5 max-w-md text-[15px] font-medium leading-relaxed text-white/90 sm:text-base">
-                  Smart purifiers, dispensers and filters for homes and offices — installed in 24 hours and
-                  monitored for life.
+                  97% of the water you use isn&apos;t for drinking or cooking. SIA filters the water you shower,
+                  wash and clean with, for healthier hair, skin and home.
                 </p>
               </Reveal>
 
               <Reveal delay={850} className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
                 <EnquireButton className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-sky">
-                  Get a free water test
+                  Enquire now
                 </EnquireButton>
                 <Link
                   href="/products"

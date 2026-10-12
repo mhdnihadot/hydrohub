@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import PartnerTicker from "@/components/PartnerTicker";
-import ProductCategories from "@/components/ProductCategories";
+import ProductStory from "@/components/ProductStory";
 import FeatureBento from "@/components/FeatureBento";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
 import Gallery from "@/components/Gallery";
@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <Hero />
       <PartnerTicker />
-      <ProductCategories />
+      <ProductStory />
       <FeatureBento />
       <InteractiveCalculator />
       <Gallery />

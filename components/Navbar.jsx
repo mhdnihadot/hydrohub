@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -14,16 +15,19 @@ const links = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-export function Logo({ light = false }) {
+// Brand logo (public/images/brand): colour on light surfaces, white on dark ones.
+export function Logo({ light = false, className = "h-11" }) {
   return (
-    <Link href="/" className="flex items-center gap-2" aria-label="HydroHub home">
-      <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${light ? "bg-white text-navy" : "bg-brand text-white"}`}>
-        {/* water drop mark */}
-        <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
-          <path d="M12 2.5c-.4 0-.7.2-.9.5C9.4 5.6 5 11.4 5 15a7 7 0 0 0 14 0c0-3.6-4.4-9.4-6.1-12-.2-.3-.5-.5-.9-.5Z" />
-        </svg>
-      </span>
-      <span className={`font-display text-xl font-semibold tracking-tight ${light ? "text-white" : "text-ink"}`}>HydroHub</span>
+    <Link href="/" className="flex shrink-0 items-center" aria-label="Hydro Hub Industries home">
+      <Image
+        src={light ? "/images/brand/logo-white.png" : "/images/brand/logo-color.png"}
+        alt="Hydro Hub Industries"
+        width={640}
+        height={190}
+        priority={!light}
+        sizes="200px"
+        className={`w-auto ${className}`}
+      />
     </Link>
   );
 }
@@ -65,8 +69,8 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href="tel:+18002837144" className="hidden text-sm font-medium text-ink lg:inline-block lg:pr-4">
-              +1 (800) 283-7144
+            <a href="tel:+917406616220" className="hidden text-sm font-medium text-ink lg:inline-block lg:pr-4">
+              +91 74066 16220
             </a>
             <EnquireButton
               arrow={false}

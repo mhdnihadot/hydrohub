@@ -7,20 +7,24 @@ import { Reveal, TextReveal } from "./motion";
 
 const faqs = [
   {
-    q: "Which purifier is right for my water?",
-    a: "It depends on your water source and TDS level. Book a free water test — our technician measures TDS, hardness and chlorine at your tap and recommends RO, UV or a simple filter accordingly.",
+    q: "Why filter water I don't drink?",
+    a: "97% of the water you use at home is for bathing, washing and cleaning. Hard water minerals, chlorine and heavy metals in that water dry out skin, cause hair fall and dull your fabrics. Shampoo and skincare can only do so much when the water itself is the problem.",
   },
   {
-    q: "How quickly can you install?",
-    a: "Most installations happen within 24 hours of booking. A standard purifier or dispenser takes about 45 minutes, and we test the water before we leave.",
+    q: "Will SIA fit my shower or tap?",
+    a: "Yes. SIA uses standard ½″ brass connectors that fit most modern showers and taps, and you can fit it yourself with ease.",
   },
   {
-    q: "How often do filters need changing?",
-    a: "Typically every 6–12 months depending on usage and water quality. Your HydroHub tracks filter life and we book the change for you before it runs out.",
+    q: "How often do I replace the cartridge?",
+    a: "Every 25,000 litres or 6 months, whichever comes first. Replacement cartridges are easily available and customised for your region's water.",
   },
   {
-    q: "Do you offer plans for offices?",
-    a: "Yes — office plans include dispensers, purifiers, scheduled servicing and bottle delivery on one monthly invoice, with priority support.",
+    q: "How is SIA different from cheaper imported filters?",
+    a: "Most imports are generic designs for Western markets that only filter chlorine. SIA has 5 layers made for Indian water: it also neutralises and conditions hard water salts. It comes with brass connectors instead of plastic and a 2.5-year warranty.",
+  },
+  {
+    q: "Do you manufacture for other brands?",
+    a: "Yes. Since 2019 we've run a 16,500 sq ft factory with a production capacity of 10,00,000, and we manufacture for clients including Eureka Forbes (Aquaguard). Send us an enquiry for bulk or OEM orders.",
   },
 ];
 
@@ -39,7 +43,7 @@ export default function FaqAccordion() {
               />
               <Reveal delay={250}>
                 <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65 sm:text-base">
-                  Clear answers to the most common questions about our products, installation and servicing.
+                  Clear answers to the most common questions about SIA, cartridges and working with us.
                 </p>
               </Reveal>
             </div>

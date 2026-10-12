@@ -79,7 +79,7 @@ export default function EnquiryModal() {
       >
         <div className="mb-6 flex items-start justify-between gap-4 border-b border-line pb-5">
           <div>
-            <span className="text-xs font-medium uppercase tracking-wider text-brand">Free water test included</span>
+            <span className="text-xs font-medium uppercase tracking-wider text-brand">Hydro Hub Industries</span>
             <h2 id="enquiry-title" className="mt-1 text-2xl font-semibold tracking-tight text-ink">
               Make an enquiry
             </h2>

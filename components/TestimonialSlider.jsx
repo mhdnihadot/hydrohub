@@ -6,18 +6,22 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Container from "./Container";
 import { Reveal, useInView } from "./motion";
 
+// Brand statements from the company profile
 const testimonials = [
   {
-    author: "Sarah Mitchell, homeowner",
-    quote:
-      "The water test showed our tap water was far harder than we thought. HydroHub installed a purifier the next morning — the coffee tastes better and we haven't bought a single bottle since.",
+    author: "Our vision",
+    quote: "To become the top brand in non-drinking residential water filtration.",
+    image: "/images/hero.jpg",
+  },
+  {
+    author: "Our mission",
+    quote: "To make good water for good life, affordable and accessible to everyone.",
     image: "/images/testimonial.jpg",
   },
   {
-    author: "Lina Haddad, Office Manager at Aetheria Labs",
-    quote:
-      "Three floors, one monthly plan. Dispensers, filter changes and deliveries just happen — I don't have to think about water any more.",
-    image: "/images/hero.jpg",
+    author: "#NoMoreBadHairDays",
+    quote: "Water is the first and last thing to touch your hair in the shower. Make it good water.",
+    image: "/images/bento_phone.jpg",
   },
 ];
 
@@ -72,14 +76,14 @@ export default function TestimonialSlider() {
                 <button
                   onClick={() => go(-1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20"
-                  aria-label="Previous testimonial"
+                  aria-label="Previous slide"
                 >
                   <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />
                 </button>
                 <button
                   onClick={() => go(1)}
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-navy transition-colors hover:bg-sky"
-                  aria-label="Next testimonial"
+                  aria-label="Next slide"
                 >
                   <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
                 </button>

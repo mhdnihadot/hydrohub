@@ -1,6 +1,6 @@
 # hydrohub
 
-Marketing site for HydroHub — water purifiers, dispensers, filters and bottles.
+Marketing site for Hydro Hub Industries: the SIA shower & tap filter, Sia hard water hair care and upcoming laundry / whole-home filtration. Copy follows the company profile.
 
 Next.js 16 (App Router) · Tailwind CSS v4 · Lenis smooth scroll · self-hosted Fontshare fonts (General Sans + Satoshi).
 
@@ -14,7 +14,7 @@ npm run build
 
 - `app/` — routes: `/`, `/products`, `/products/[slug]`, `/about`, `/credits`, `api/enquiry`
 - `components/` — page sections; `motion.jsx` holds the scroll-reveal / word-reveal / count-up helpers
-- `data/products.js` — product catalogue (add `image` to a product to replace its illustration with a photo)
+- `data/products.js` — product catalogue (cards show `image` if set, otherwise the first `gallery` photo)
 - `data/credits.js` — attribution for the Wikimedia Commons photos in `public/images/gallery`
 - `app/globals.css` — theme colour tokens (`@theme`) and motion styles
 

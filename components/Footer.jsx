@@ -33,10 +33,10 @@ export default function Footer() {
         <div className="rounded-3xl bg-navy px-6 py-12 text-white sm:px-10 lg:px-14 lg:py-16">
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-12">
             <div className="col-span-2 sm:col-span-3 lg:col-span-5">
-              <Logo light />
+              <Logo light className="h-12" />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-                Water purifiers, dispensers, filters and bottles for homes and offices — installed in 24 hours and looked
-                after for life.
+                It all starts with water. Affordable, sustainable, eco-friendly filtration for the 97% of your water that
+                isn&apos;t for drinking. Made in India since 2019.
               </p>
               <div className="mt-6 flex gap-2">
                 {socials.map((s) => (
@@ -84,22 +84,27 @@ export default function Footer() {
               <h4 className="text-sm font-semibold">Get in touch</h4>
               <ul className="mt-4 space-y-3 text-sm text-white/60">
                 <li>
-                  <a href="tel:+18002837144" className="transition-colors hover:text-white">
-                    +1 (800) 283-7144
+                  <a href="tel:+917406616220" className="transition-colors hover:text-white">
+                    +91 74066 16220
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:hello@hydrohub.io" className="transition-colors hover:text-white">
-                    hello@hydrohub.io
+                  <a href="mailto:care@hydrohub.in" className="transition-colors hover:text-white">
+                    care@hydrohub.in
                   </a>
                 </li>
-                <li>Financial Center Blvd, Suite 2104</li>
+                <li>
+                  <a href="tel:18001210599" className="transition-colors hover:text-white">
+                    1800-121-0599 (toll-free)
+                  </a>
+                </li>
+                <li>Aluva, Kochi, Kerala 683101</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <p>© HydroHub. All rights reserved.</p>
+            <p>© Hydro Hub Industries Pvt. Ltd. All rights reserved.</p>
             <div className="-my-2 flex gap-1">
               <Link href="/credits" className="px-2 py-3 hover:text-white">
                 Image credits

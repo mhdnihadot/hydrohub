@@ -3,18 +3,18 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { useInView } from "./motion";
 
-// Water-quality meter: purity score (0–100, higher is better) per test, for tap vs filtered vs HydroHub water.
+// What each option filters out of shower & tap water, per the SIA vs generic comparison in the company profile.
 const sources = {
-  Tap: { purity: "72%", levels: [34, 48, 58, 26] },
-  Filtered: { purity: "91%", levels: [70, 82, 74, 60] },
-  HydroHub: { purity: "99.9%", levels: [98, 99, 100, 94] },
+  "Tap water": { badge: "Unfiltered", levels: [0, 0, 0, 0] },
+  Generic: { badge: "Chlorine only", levels: [100, 0, 0, 0] },
+  SIA: { badge: "5 layers", levels: [100, 100, 100, 100] },
 };
-const labels = ["Lead", "Chlorine", "Microbes", "TDS"];
+const labels = ["Chlorine", "Hardness", "Metals", "Sediment"];
 
 export default function WaterQualityWidget() {
-  const [source, setSource] = useState("HydroHub");
+  const [source, setSource] = useState("SIA");
   const [ref, inView] = useInView({ threshold: 0.3 });
-  const { purity, levels } = sources[source];
+  const { badge, levels } = sources[source];
   const tabRefs = useRef({});
   const underline = useRef(null);
 
@@ -34,11 +34,8 @@ export default function WaterQualityWidget() {
       }`}
     >
       <div className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="font-display text-[15px] font-semibold tracking-tight text-ink">Water quality</span>
-          <span className="rounded-full bg-sky px-2 py-0.5 text-[10px] font-semibold text-brand tabular-nums">{purity}</span>
-        </div>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted">Live</span>
+        <span className="font-display text-[15px] font-semibold tracking-tight text-ink">Shower water</span>
+        <span className="rounded-full bg-sky px-2 py-0.5 text-[10px] font-semibold text-brand">{badge}</span>
       </div>
 
       <div className="relative mb-4 flex items-center gap-4 text-[11px]">
@@ -63,8 +60,8 @@ export default function WaterQualityWidget() {
         {levels.map((lvl, i) => (
           <div key={labels[i]} className="flex h-full flex-1 flex-col justify-end">
             <div
-              className={`grow-bar w-full rounded-[6px] ${lvl >= 90 ? "bg-brand" : lvl >= 60 ? "bg-water" : "bg-navy/25"}`}
-              style={{ height: `${Math.max(lvl, 6)}%`, "--d": `${700 + i * 120}ms` }}
+              className={`grow-bar w-full rounded-[6px] ${lvl ? "bg-brand" : "bg-navy/15"}`}
+              style={{ height: `${Math.max(lvl, 8)}%`, "--d": `${700 + i * 120}ms` }}
             />
           </div>
         ))}
@@ -77,7 +74,7 @@ export default function WaterQualityWidget() {
         ))}
       </div>
 
-      <div className="mt-3 border-t border-line pt-3 text-[10px] tracking-wide text-muted">Purity by test · higher is better</div>
+      <div className="mt-3 border-t border-line pt-3 text-[10px] tracking-wide text-muted">What gets filtered · full bar = treated</div>
     </div>
   );
 }

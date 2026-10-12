@@ -73,8 +73,9 @@ export function TextReveal({ lines, as: Tag = "h2", className = "", accentClass 
 }
 
 // Counts from `from` to `to` when scrolled into view (or whenever `to` changes after that).
-export function CountUp({ to, from = 0, duration = 1400, decimals = 0, format, className = "" }) {
-  const fmt = format || ((v) => v.toFixed(decimals));
+export function CountUp({ to, from = 0, duration = 1400, decimals = 0, group = false, format, className = "" }) {
+  // `group` = Indian digit grouping (10,00,000); usable from server components, unlike `format`
+  const fmt = format || ((v) => (group ? Math.round(v).toLocaleString("en-IN") : v.toFixed(decimals)));
   const [ref, inView] = useInView({ threshold: 0.4 });
   const [value, setValue] = useState(from);
   const current = useRef(from);

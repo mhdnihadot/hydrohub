@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, ChevronRight, ShieldCheck, Truck, Wrench, Sparkles } from "lucide-react";
+import { Check, ChevronRight, ShieldCheck, Award, Wrench, Sparkles } from "lucide-react";
 import Container from "@/components/Container";
 import ProductGallery from "@/components/ProductGallery";
 import ProductCard from "@/components/ProductCard";
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }) {
 }
 
 const perks = [
-  { Icon: Truck, text: "Free installation within 24 hours" },
-  { Icon: Wrench, text: "Filter changes & servicing included on plans" },
-  { Icon: ShieldCheck, text: "Certified, tested before handover" },
+  { Icon: Award, text: "Made in India, made for the world" },
+  { Icon: Wrench, text: "Fit it yourself — standard ½″ fittings" },
+  { Icon: ShieldCheck, text: "NSF & WQA certified filter media" },
 ];
 
 export default async function ProductPage({ params }) {
@@ -88,7 +88,7 @@ export default async function ProductPage({ params }) {
                 Enquire about this product
               </EnquireButton>
               <a
-                href="tel:+18002837144"
+                href="tel:+917406616220"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
               >
                 Call an expert
@@ -109,10 +109,10 @@ export default async function ProductPage({ params }) {
                 <Sparkles className="h-5 w-5" strokeWidth={1.5} />
               </span>
               <div>
-                <h3 className="text-sm font-semibold text-ink">HydroHub Care</h3>
+                <h3 className="text-sm font-semibold text-ink">The Sia routine</h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted">
-                  Add a care plan for automatic filter changes, yearly servicing and priority support — ask us when you
-                  enquire.
+                  Water is the first and last thing to touch your hair in the shower. For best results, pair the SIA filter
+                  with Sia hard water hair care.
                 </p>
               </div>
             </div>

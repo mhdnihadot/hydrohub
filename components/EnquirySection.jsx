@@ -1,13 +1,13 @@
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, Headphones, MapPin } from "lucide-react";
 import Container from "./Container";
 import EnquiryForm from "./EnquiryForm";
 import { Reveal, TextReveal } from "./motion";
 
 const contacts = [
-  { Icon: Phone, label: "Call us", value: "+1 (800) 283-7144", href: "tel:+18002837144" },
-  { Icon: Mail, label: "Email", value: "hello@hydrohub.io", href: "mailto:hello@hydrohub.io" },
-  { Icon: Clock, label: "Hours", value: "Sat–Thu · 8am – 8pm" },
-  { Icon: MapPin, label: "Showroom", value: "Financial Center Blvd, Suite 2104" },
+  { Icon: Phone, label: "Call us", value: "+91 74066 16220", href: "tel:+917406616220" },
+  { Icon: Headphones, label: "Customer care (toll-free)", value: "1800-121-0599", href: "tel:18001210599" },
+  { Icon: Mail, label: "Email", value: "care@hydrohub.in", href: "mailto:care@hydrohub.in" },
+  { Icon: MapPin, label: "Factory", value: "Aluva, Kochi, Kerala 683101" },
 ];
 
 export default function EnquirySection() {
@@ -19,16 +19,16 @@ export default function EnquirySection() {
             <div className="flex h-full flex-col justify-between gap-10 rounded-3xl bg-navy p-6 text-white sm:p-10">
               <div>
                 <TextReveal
-                  lines={["Let's find the right", "water for *you*"]}
+                  lines={["Let's fix your", "*water* together"]}
                   accentClass="text-aqua"
                   className="text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-4xl"
                 />
                 <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
-                  Leave your details and a HydroHub expert will call you back within one working day — including a free
-                  water test at your place.
+                  Buying for your home, stocking SIA, or looking for a manufacturing partner? Leave your details and the
+                  Hydro Hub team will call you back within one working day.
                 </p>
                 <ol className="mt-8 space-y-4 border-t border-white/10 pt-6">
-                  {["We call you back", "Free on-site water test", "Installed within 24 hours"].map((step, i) => (
+                  {["We call you back", "We find the right fix for your water", "You fit it yourself in minutes"].map((step, i) => (
                     <li key={step} className="flex items-center gap-3 text-sm">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/25 text-[11px] font-semibold">
                         {i + 1}

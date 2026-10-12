@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* HydroHub — white + water-blue theme.
+/* Hydro Hub — white + water-blue theme.
    Use these as Tailwind classes: bg-navy, text-ink, bg-brand, text-aqua, bg-sky, bg-ice, text-muted, border-line … */
 @theme {
   /* Self-hosted Fontshare fonts (app/fonts, wired up in app/layout.js) */
@@ -16,10 +16,11 @@
   --color-navy-deep: #081827;
   --color-navy-soft: #17324F;
 
-  --color-brand: #1E5EEA;        /* the one accent: buttons, links, highlights */
-  --color-brand-hover: #184FC6;
+  --color-brand: #2356A4;        /* the one accent: buttons, links, highlights */
+  --color-brand-hover: #1C478A;
   --color-water: #7EA6F2;        /* secondary blue (charts) */
   --color-aqua: #BCD4FF;         /* soft accent on dark surfaces */
+  --color-cyan: #20A8DE;         /* "water blue" from the profile (stripes, accents) */
 
   --color-sky: #EEF3F9;          /* light surface */
   --color-ice: #F6F8FB;

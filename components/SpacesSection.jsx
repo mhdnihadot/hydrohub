@@ -4,25 +4,25 @@ import Container from "./Container";
 import EnquireButton from "./EnquireButton";
 import { Reveal, TextReveal } from "./motion";
 
-// "Built for every space" — solutions by where the water is used.
+// Solutions by where the water is used at home.
 const spaces = [
   {
-    title: "Homes",
-    text: "Purified drinking water at the kitchen tap, with filters changed for you.",
-    includes: ["RO + UV purifier", "Free water test", "Automatic filter changes"],
-    image: "/images/testimonial.jpg",
+    title: "Bathroom",
+    text: "Filtered shower water for less hair fall and softer skin, plus the Sia hair care routine.",
+    includes: ["SIA Shower & Tap Filter", "Hard water shampoo (next)", "Rain & multi-flow showers (soon)"],
+    image: "/images/gallery/spray.jpg",
   },
   {
-    title: "Offices",
-    text: "Mains-fed dispensers on every floor — no bottles to carry, no tanks to track.",
-    includes: ["Hot & cold dispensers", "Scheduled servicing", "One monthly invoice"],
-    image: "/images/article_3.jpg",
+    title: "Kitchen & taps",
+    text: "The same 5-layer filter fits your wash basin and kitchen taps for everyday washing and cleaning.",
+    includes: ["SIA on any ½″ tap", "Replacement cartridges", "Whole-house filter (soon)"],
+    image: "/images/gallery/pouring.jpg",
   },
   {
-    title: "Cafés & restaurants",
-    text: "Consistent, scale-free water for coffee machines, ice and table service.",
-    includes: ["Commercial filtration", "Limescale protection", "Priority call-outs"],
-    image: "/images/article_2.jpg",
+    title: "Laundry",
+    text: "Fabric losing its shine and softness? Treat the water going into your washing machine.",
+    includes: ["Washing machine filter (soon)", "Hard water detergent (soon)"],
+    image: "/images/gallery/splash.jpg",
   },
 ];
 
@@ -36,13 +36,13 @@ export default function SpacesSection() {
               <span className="text-sm font-medium text-brand">Solutions</span>
             </Reveal>
             <TextReveal
-              lines={["Built for every space"]}
+              lines={["Good water, every room"]}
               className="mt-2 text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
             />
           </div>
           <Reveal delay={200}>
             <p className="max-w-sm text-sm leading-relaxed text-muted">
-              From a single kitchen to a whole building — we size, install and look after the right system.
+              From your shower to your washing machine, better water for every daily chore.
             </p>
           </Reveal>
         </div>
@@ -73,7 +73,7 @@ export default function SpacesSection() {
                   </ul>
                   <div className="mt-auto pt-6">
                     <EnquireButton className="inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-line px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-brand hover:bg-brand hover:text-white">
-                      Enquire for {s.title.toLowerCase()}
+                      Enquire about {s.title.toLowerCase()}
                     </EnquireButton>
                   </div>
                 </div>

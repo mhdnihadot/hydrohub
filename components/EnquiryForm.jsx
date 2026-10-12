@@ -5,11 +5,11 @@ import {
   ArrowRight,
   CircleCheck,
   Loader2,
-  Droplets,
-  GlassWater,
+  ShowerHead,
   Filter,
-  Milk,
-  Building2,
+  Sparkles,
+  WashingMachine,
+  Factory,
   Wrench,
   ChevronDown,
   Phone,
@@ -19,14 +19,14 @@ import {
 import { products } from "@/data/products";
 
 const interests = [
-  { label: "Purifier", Icon: Droplets },
-  { label: "Dispenser", Icon: GlassWater },
-  { label: "Filter", Icon: Filter },
-  { label: "Bottles", Icon: Milk },
-  { label: "Office / bulk", Icon: Building2 },
-  { label: "Service", Icon: Wrench },
+  { label: "Shower filter", Icon: ShowerHead },
+  { label: "Cartridge", Icon: Filter },
+  { label: "Hair & body", Icon: Sparkles },
+  { label: "Laundry / home", Icon: WashingMachine },
+  { label: "Bulk / OEM", Icon: Factory },
+  { label: "Support", Icon: Wrench },
 ];
-const interestFor = { purifiers: "Purifier", dispensers: "Dispenser", filters: "Filter", bottles: "Bottles" };
+const interestFor = { "shower-tap": "Shower filter", "hair-body": "Hair & body", laundry: "Laundry / home", "whole-home": "Laundry / home" };
 
 const contactModes = [
   { label: "Call", Icon: Phone },
@@ -86,7 +86,7 @@ export default function EnquiryForm({ defaultProduct = "", onDone, compact = fal
         </span>
         <h3 className="mt-5 text-2xl font-semibold tracking-tight text-ink">Thank you — we&apos;ve got it</h3>
         <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted">
-          A HydroHub water expert will get back to you by {contact === "Email" ? "email" : contact === "WhatsApp" ? "WhatsApp" : "phone"} within one working day.
+          The Hydro Hub team will get back to you by {contact === "Email" ? "email" : contact === "WhatsApp" ? "WhatsApp" : "phone"} within one working day.
         </p>
         {onDone && (
           <button onClick={onDone} className="mt-7 rounded-full border border-line px-6 py-2.5 text-sm font-semibold text-ink hover:border-ink/30">

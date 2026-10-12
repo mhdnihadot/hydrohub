@@ -7,12 +7,12 @@ import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
 
 const images = [
-  { src: "/images/gallery/droplet.jpg", caption: "Every drop, tested" },
-  { src: "/images/hero.jpg", caption: "Living with pure water" },
-  { src: "/images/gallery/blue-glass.jpg", caption: "Crisp & refreshing" },
-  { src: "/images/gallery/spray.jpg", caption: "Filtered to 0.1 micron" },
-  { src: "/images/gallery/splash.jpg", caption: "Mineral balanced" },
-  { src: "/images/gallery/pouring.jpg", caption: "Fresh at home" },
+  { src: "/images/gallery/droplet.jpg", caption: "It all starts with water" },
+  { src: "/images/hero.jpg", caption: "No more bad hair days" },
+  { src: "/images/gallery/blue-glass.jpg", caption: "Clean, healthy water" },
+  { src: "/images/gallery/spray.jpg", caption: "A better shower, every day" },
+  { src: "/images/gallery/splash.jpg", caption: "Hard water salts, conditioned" },
+  { src: "/images/gallery/pouring.jpg", caption: "Better water at every tap" },
 ];
 
 export default function Gallery() {
@@ -42,7 +42,7 @@ export default function Gallery() {
               <span className="text-sm font-medium text-brand">Gallery</span>
             </Reveal>
             <TextReveal
-              lines={["Moments of pure water"]}
+              lines={["#TheNaturalWay"]}
               className="mt-2 text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
             />
           </div>

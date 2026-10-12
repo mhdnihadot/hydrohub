@@ -1,17 +1,19 @@
 import Link from "next/link";
-import { ArrowRight, Waves, Droplets, Hexagon, Orbit, ShieldCheck, Layers, Triangle, Sparkle, CalendarClock, Filter } from "lucide-react";
+import { ArrowRight, Waves, Droplets, ShieldCheck, Layers, Sparkle, CalendarClock, Award, Wrench, Leaf, BadgeCheck } from "lucide-react";
 import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
 
+// Trust points from the company profile
 const partners = [
-  { name: "Solv.", Icon: Triangle },
-  { name: "GreenFlag", Icon: Orbit },
-  { name: "Aqualine", Icon: Waves },
-  { name: "Meetem", Icon: Layers },
-  { name: "Continiom", Icon: Hexagon },
-  { name: "PureCert", Icon: ShieldCheck },
-  { name: "trustvil", Icon: Sparkle },
-  { name: "Rainfold", Icon: Droplets },
+  { name: "Manufacturing for Eureka Forbes · Aquaguard", Icon: Waves },
+  { name: "Made in India", Icon: Award },
+  { name: "NSF & WQA certified media", Icon: ShieldCheck },
+  { name: "5-layer filtration", Icon: Layers },
+  { name: "2.5-year warranty", Icon: BadgeCheck },
+  { name: "Brass connectors", Icon: Wrench },
+  { name: "BPA-free", Icon: Leaf },
+  { name: "25,000 L cartridge", Icon: Droplets },
+  { name: "#TheNaturalWay", Icon: Sparkle },
 ];
 
 export default function PartnerTicker() {
@@ -21,7 +23,7 @@ export default function PartnerTicker() {
         {/* Trust badge */}
         <Reveal className="flex justify-center">
           <div className="rounded-full border border-line bg-frost px-4 py-2 text-center text-xs font-medium text-ink/80 sm:px-5 sm:text-sm">
-            Trusted by 5,000+ homes & 300 offices
+            India&apos;s 1st Dual Hardness Technology shower &amp; tap filter
           </div>
         </Reveal>
 
@@ -42,7 +44,7 @@ export default function PartnerTicker() {
           <div className="flex flex-col justify-between lg:col-span-5">
             <div>
             <TextReveal
-              lines={["Built for your next", "gen of *hydration*"]}
+              lines={["97% of your water", "isn't for *drinking*"]}
               className="text-[34px] font-semibold leading-[1.08] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[52px]"
             />
 
@@ -64,12 +66,14 @@ export default function PartnerTicker() {
 
             <Reveal delay={400} className="mt-10 max-w-md space-y-4 text-sm leading-relaxed text-muted sm:text-[15px]">
               <p>
-                <span className="font-semibold text-ink">Clean water, made simple.</span> Purification technology
-                designed around how you actually live and work.
+                <span className="font-semibold text-ink">Gone are the days of the backyard well.</span> Today we
+                don&apos;t know where the water in our taps and showers comes from. It often carries hard water minerals,
+                chlorine, heavy metals and hundreds of other contaminants.
               </p>
               <p>
-                <span className="font-semibold text-ink">Lab-grade purity,</span> with none of the bottled-water waste.
-                Every HydroHub system is installed, tested and serviced by our own certified technicians.
+                <span className="font-semibold text-ink">It shows up in your daily chores</span>: washing, bathing and
+                cleaning, in ways you don&apos;t even notice. Our vision is to become the top brand in non-drinking
+                residential water filtration.
               </p>
             </Reveal>
           </div>
@@ -80,24 +84,24 @@ export default function PartnerTicker() {
               <div className="flex h-full min-h-[260px] flex-col justify-between rounded-2xl bg-sky p-6 transition-shadow sm:p-7">
                 <div>
                   <h3 className="text-2xl font-semibold leading-tight tracking-tight text-ink">
-                    Pure water at any scale — home or office
+                    Shower & tap filter for hair and skin
                   </h3>
                   <ul className="mt-5 space-y-2 text-xs leading-relaxed text-muted">
                     <li className="flex gap-2">
                       <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" strokeWidth={1.5} />
-                      RO + UV purification, tested every visit
+                      Reduces chlorine & conditions hardness salts
                     </li>
                     <li className="flex gap-2">
                       <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" strokeWidth={1.5} />
-                      Filter changes booked automatically
+                      Fits standard ½″ shower & tap fittings
                     </li>
                   </ul>
                 </div>
                 <Link
-                  href="/products?category=purifiers"
+                  href="/products?category=shower-tap"
                   className="mt-6 inline-flex w-fit items-center gap-2 whitespace-nowrap rounded-full bg-brand px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-brand-hover"
                 >
-                  View purifiers <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  View filters <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
                 </Link>
               </div>
             </Reveal>
@@ -110,16 +114,16 @@ export default function PartnerTicker() {
                 <div className="relative space-y-3">
                   <div className="w-fit rounded-2xl bg-white/10 p-3">
                     <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-navy">
-                      <CalendarClock className="h-3 w-3" strokeWidth={1.5} /> Refill delivery
+                      <CalendarClock className="h-3 w-3" strokeWidth={1.5} /> Cartridge life
                     </span>
-                    <div className="text-sm font-semibold">Scheduled for you</div>
-                    <div className="text-[11px] text-white/60">2 × 19 L bottles</div>
+                    <div className="text-sm font-semibold">25,000 L / 6 months</div>
+                    <div className="text-[11px] text-white/60">Replacements easily available</div>
                   </div>
                   <div className="ml-auto w-fit rounded-2xl border border-white/10 bg-navy-soft p-3">
                     <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-aqua px-2.5 py-1 text-[10px] font-semibold text-navy">
-                      <Filter className="h-3 w-3" strokeWidth={1.5} /> Filter change
+                      <ShieldCheck className="h-3 w-3" strokeWidth={1.5} /> Warranty
                     </span>
-                    <div className="text-sm font-semibold">Booked automatically</div>
+                    <div className="text-sm font-semibold">2.5 years</div>
                     <div className="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-white/15">
                       <div className="h-full w-[78%] rounded-full bg-aqua" />
                     </div>
@@ -127,7 +131,7 @@ export default function PartnerTicker() {
                 </div>
 
                 <h3 className="relative mt-6 text-2xl font-semibold leading-tight tracking-tight text-white">
-                  Subscribe once — never run out of fresh water
+                  Good water for good life, affordable & accessible to everyone
                 </h3>
               </div>
             </Reveal>
