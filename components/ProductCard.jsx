@@ -7,7 +7,6 @@ import { getCategory } from "@/data/products";
 export default function ProductCard({ product }) {
   const category = getCategory(product.category);
   const chips = product.highlights.map((k) => product.specs[k]).filter((c) => c && c !== product.badge);
-  const upcoming = Boolean(product.badge);
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-colors duration-300 hover:border-ink/20">
@@ -52,7 +51,7 @@ export default function ProductCard({ product }) {
             product={product.name}
             className="inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-line px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand hover:bg-brand hover:text-white"
           >
-            {upcoming ? "Notify me" : "Enquire"}
+            {product.badge ? "Develop with us" : "Enquire"}
           </EnquireButton>
         </div>
       </div>

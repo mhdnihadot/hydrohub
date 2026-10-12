@@ -1,7 +1,7 @@
 // Product catalogue — edit here. Content follows the Hydro Hub Industries company profile.
 // Cards show `image` if set, otherwise the first `gallery` photo. `highlights` = spec keys shown as chips.
 // There are no product detail pages; cards open the enquiry form.
-// Only the shower & tap filter and its cartridge are on sale today. "Launching next" / "Coming soon" products are on the
+// Only the shower & tap filter and its cartridge are on sale today. "In R&D" / "In R&D" products are on the
 // roadmap — enquiries register interest.
 
 export const categories = [
@@ -75,20 +75,20 @@ export const products = [
     category: "shower-tap",
     name: "Rain & Multi-Flow Shower",
     highlights: ["Status", "Use", "Pairs with"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/gallery/spray.jpg", "/images/gallery/splash.jpg"],
     summary: "Rain and multi-flow shower heads designed to pair with our shower filter.",
     description:
-      "Our upcoming range of rain and multi-flow showers is designed to work with our shower filter, for a better shower in every way. Enquire to be told when it launches.",
+      "Our R&D team is developing a range of rain and multi-flow showers designed to work with our shower filter, for a better shower in every way. Already in our R&D, ready to be developed and manufactured under your brand.",
     features: ["Rain & multi-flow options", "Designed to pair with our filter", "Standard bath fittings"],
-    specs: { Status: "Coming soon", Use: "Bathroom", "Pairs with": "Shower filter" },
+    specs: { Status: "In R&D", Use: "Bathroom", "Pairs with": "Shower filter" },
   },
   {
     slug: "hard-water-shampoo",
     category: "hair-body",
     name: "Hard Water Shampoo",
     highlights: ["Volume", "Key actives", "Free from"],
-    badge: "Launching next",
+    badge: "In R&D",
     gallery: ["/images/hero.jpg", "/images/gallery/splash.jpg"],
     summary: "No more bad hair days. Rare Blue Clay, Bamboo Vinegar & Argan Oil for hair exposed to hard water.",
     description:
@@ -115,20 +115,20 @@ export const products = [
     category: "hair-body",
     name: "Hard Water Shower Gel",
     highlights: ["Status", "Use", "Pairs with"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/gallery/splash.jpg", "/images/gallery/spray.jpg"],
     summary: "A body wash made for hard water, so skin isn't left dry after your daily shower.",
     description:
-      "Our Hard Water Shower Gel follows our shampoo, made for skin that hard water leaves dry, tight or flaky. Enquire to be told when it launches.",
+      "Developed alongside our shampoo, our Hard Water Shower Gel is made for skin that hard water leaves dry, tight or flaky. Already in our R&D, ready to be developed and manufactured under your brand.",
     features: ["Made for hard water", "Natural bio-actives", "Pairs with our shampoo & shower filter"],
-    specs: { Status: "Coming soon", Use: "Body", "Pairs with": "Shower filter" },
+    specs: { Status: "In R&D", Use: "Body", "Pairs with": "Shower filter" },
   },
   {
     slug: "boar-bristle-brush",
     category: "hair-body",
     name: "Boar Bristle Brush",
     highlights: ["Bristles", "Use", "Routine step"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/hero.jpg", "/images/gallery/droplet.jpg"],
     summary: "Brush away leftover minerals and pollutants for a natural bounce. Step 3 of the hard water routine.",
     description:
@@ -141,39 +141,39 @@ export const products = [
     category: "laundry",
     name: "Washing Machine Filter",
     highlights: ["Status", "Use", "Pairs with"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/gallery/splash.jpg", "/images/gallery/droplet.jpg"],
     summary: "Fabrics losing their shine and softness? Filter hard water before it reaches your machine.",
     description:
-      "Hard water dulls colours and leaves fabrics rough. Our upcoming washing machine filter treats the water going into your machine, so clothes stay soft and bright for longer. Enquire to be told when it launches.",
+      "Hard water dulls colours and leaves fabrics rough. Our washing machine filter, now in R&D, treats the water going into your machine, so clothes stay soft and bright for longer. Already in our R&D, ready to be developed and manufactured under your brand.",
     features: ["Fits the machine inlet", "Protects fabric softness & shine", "Pairs with our hard water detergent"],
-    specs: { Status: "Coming soon", Use: "Washing machine", "Pairs with": "Hard water detergent" },
+    specs: { Status: "In R&D", Use: "Washing machine", "Pairs with": "Hard water detergent" },
   },
   {
     slug: "hard-water-liquid-detergent",
     category: "laundry",
     name: "Hard Water Liquid Detergent",
     highlights: ["Status", "Use", "Pairs with"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/gallery/splash.jpg", "/images/gallery/pouring.jpg"],
     summary: "A liquid detergent made to clean properly in hard water.",
     description:
-      "Most detergents struggle in hard water. Ours is made for it, and works with the washing machine filter to keep clothes clean, soft and bright. Enquire to be told when it launches.",
+      "Most detergents struggle in hard water. Ours is made for it, and works with the washing machine filter to keep clothes clean, soft and bright. Already in our R&D, ready to be developed and manufactured under your brand.",
     features: ["Made for hard water", "For washing machines", "Pairs with the washing machine filter"],
-    specs: { Status: "Coming soon", Use: "Washing machine", "Pairs with": "Machine filter" },
+    specs: { Status: "In R&D", Use: "Washing machine", "Pairs with": "Machine filter" },
   },
   {
     slug: "point-of-entry-filter",
     category: "whole-home",
     name: "Point-of-Entry Main Line Filter",
     highlights: ["Status", "Covers", "Fitted at"],
-    badge: "Coming soon",
+    badge: "In R&D",
     gallery: ["/images/gallery/droplet.jpg", "/images/gallery/pouring.jpg"],
     summary: "Whole-house filtration fitted on your main line, so every shower, tap and appliance gets better water.",
     description:
-      "97% of the water you use isn't for drinking or cooking. A point-of-entry filter treats all of it where it enters your home, covering every bathroom, kitchen tap and appliance at once. Enquire to be told when it launches.",
+      "97% of the water you use isn't for drinking or cooking. A point-of-entry filter treats all of it where it enters your home, covering every bathroom, kitchen tap and appliance at once. Already in our R&D, ready to be developed and manufactured under your brand.",
     features: ["Treats water where it enters the home", "Covers every tap, shower & appliance", "For homes and apartments"],
-    specs: { Status: "Coming soon", Covers: "Whole house", "Fitted at": "Main line" },
+    specs: { Status: "In R&D", Covers: "Whole house", "Fitted at": "Main line" },
   },
 ];
 

@@ -3,7 +3,6 @@ import PartnerTicker from "@/components/PartnerTicker";
 import ProcessSection from "@/components/ProcessSection";
 import OemSection from "@/components/OemSection";
 import ProductStory from "@/components/ProductStory";
-import FeatureBento from "@/components/FeatureBento";
 import InteractiveCalculator from "@/components/InteractiveCalculator";
 import Gallery from "@/components/Gallery";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -19,7 +18,6 @@ export default function Home() {
       <ProcessSection />
       <OemSection />
       <ProductStory />
-      <FeatureBento />
       <InteractiveCalculator />
       <Gallery />
       <FaqAccordion />

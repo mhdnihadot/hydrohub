@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, X } from "lucide-react";
+import { ArrowUpRight, Check, X } from "lucide-react";
 import Container from "./Container";
 import EnquireButton from "./EnquireButton";
 import { Reveal, TextReveal } from "./motion";
@@ -26,7 +25,8 @@ const actives = [
   { name: "Argan Oil", text: "Restores natural moisture and boosts hair growth." },
 ];
 
-const future = products.filter((p) => p.badge === "Coming soon");
+// Everything in R&D except the shampoo, which has its own block above
+const future = products.filter((p) => p.badge === "In R&D" && p.slug !== "hard-water-shampoo");
 
 // Solid blue label, like the headings in the company profile
 function Label({ children, light = false }) {
@@ -86,14 +86,14 @@ export default function ProductStory() {
           </div>
         </div>
 
-        {/* 2 — Very next product */}
+        {/* 2 — From our R&D: hard water shampoo */}
         <div className="mt-16 sm:mt-24">
           <div className="flex flex-col items-start gap-5">
             <Reveal>
-              <Label>In development</Label>
+              <Label>From our R&amp;D lab</Label>
             </Reveal>
             <TextReveal
-              lines={["Hard water *shampoo*"]}
+              lines={["Hard water *shampoo*", "formulated in-house"]}
               className="text-[28px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-4xl"
             />
           </div>
@@ -111,9 +111,9 @@ export default function ProductStory() {
             <Reveal variant="right" delay={150} className="lg:col-span-7">
               <div className="flex h-full flex-col rounded-2xl bg-sky p-6 sm:p-10">
                 <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-                  Hard water minerals build up on your scalp and clog hair follicles, leaving hair dull, lifeless and frizzy
-                  after a shower. Our Hard Water Shampoo neutralises hard water, removes mineral build-up and restores
-                  natural moisture.
+                  Our R&amp;D goes beyond filters. Led by our dedicated Dr., the team has already formulated a hard water
+                  shampoo that neutralises hard water, removes the mineral build-up that leaves hair dull and frizzy, and
+                  restores natural moisture. We develop and manufacture it in-house, ready to carry your brand.
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {actives.map((a, i) => (
@@ -128,31 +128,32 @@ export default function ProductStory() {
                   synthetic colourants or perfume.
                 </p>
                 <div className="mt-auto pt-8">
-                  <Link
-                    href="/products?category=hair-body"
+                  <EnquireButton
+                    product="Hard Water Shampoo"
+                    interest="Bulk / OEM"
                     className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
                   >
-                    See hair & body care <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
-                  </Link>
+                    Develop it for your brand
+                  </EnquireButton>
                 </div>
               </div>
             </Reveal>
           </div>
         </div>
 
-        {/* 3 — Future products */}
+        {/* 3 — More in R&D */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:mt-24 lg:grid-cols-12">
           <div className="flex flex-col items-start gap-5 lg:col-span-4">
             <Reveal>
-              <Label>Expanding the range</Label>
+              <Label>Already in R&amp;D</Label>
             </Reveal>
             <TextReveal
-              lines={["What we can", "build *next*"]}
+              lines={["On our R&D", "bench *now*"]}
               className="text-[28px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-4xl"
             />
             <Reveal delay={200}>
               <p className="max-w-xs text-sm leading-relaxed text-muted">
-                Products in development, available for OEM partners. Enquire to build any of them under your brand.
+                Our R&amp;D team is already developing these. Partner with us to bring any of them to market under your brand.
               </p>
             </Reveal>
           </div>

@@ -60,29 +60,6 @@ h1, h2, h3, h4 {
   color: #FFFFFF;
 }
 
-/* Infinite tag rows in the bento card */
-@keyframes tags-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes tags-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-tags-left {
-  display: flex;
-  width: max-content;
-  animation: tags-left 18s linear infinite;
-}
-
-.animate-tags-right {
-  display: flex;
-  width: max-content;
-  animation: tags-right 18s linear infinite;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #F1F6FC; }
@@ -248,7 +225,7 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
 }
 
 /* Reduced motion (iOS "Reduce Motion", Android "Remove animations" / battery saver):
-   drop movement (slides, zoom, scrolling tags) but keep gentle fades so the page still feels alive. */
+   drop movement (slides, zoom) but keep gentle fades so the page still feels alive. */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal[data-variant] {
@@ -276,9 +253,7 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
     opacity: 1;
   }
 
-  .hero-zoom,
-  .animate-tags-left,
-  .animate-tags-right {
+  .hero-zoom {
     animation: none;
   }
 }
