@@ -26,7 +26,7 @@ const interests = [
   { label: "Hair & body", Icon: Sparkles },
   { label: "Laundry / home", Icon: WashingMachine },
 ];
-const interestFor = { "shower-tap": "Shower filter", "hair-body": "Hair & body", laundry: "Laundry / home", "whole-home": "Laundry / home" };
+const interestFor = { "shower-tap": "Shower filter", "filter-media": "Cartridge", "hair-body": "Hair & body", laundry: "Laundry / home", home: "Laundry / home" };
 
 const contactModes = [
   { label: "Call", Icon: Phone },

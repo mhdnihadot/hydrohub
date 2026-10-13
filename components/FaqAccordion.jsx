@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "What products can you manufacture?",
-    a: "Any water-related product. We're not limited to one product: our R&D team and engineers can develop and manufacture to your brief. Today we make 5-layer shower & tap filters and cartridges, and we're developing washing machine filters, whole-house filters, shower heads and hard water care products.",
+    a: "Any water-related product. We're not limited to one product: our R&D team and engineers can develop and manufacture to your brief. Today we make 5-layer shower & tap filters and cartridges, and our R&D team is developing aroma, Vitamin C, hydrogen and alkaline cartridges, washing machine, tank and kitchen tap filters, rainwater harvesting systems and a hard water shampoo.",
   },
 ];
 

@@ -28,8 +28,8 @@ const values = [
 
 const steps = [
   { n: "01", title: "Shower & Tap Filter", text: "Fit it to your existing shower or tap. It removes chlorine, neutralises hard water and filters heavy metals." },
-  { n: "02", title: "Hard Water Shampoo & Shower Gel", text: "No more dry or frizzy hair and skin after your daily shower." },
-  { n: "03", title: "Boar Bristle Brush", text: "Lifts leftover minerals and pollutants and gives hair a natural bounce." },
+  { n: "02", title: "Hard Water Shampoo", text: "No more dry or frizzy hair after your daily shower." },
+  { n: "03", title: "Vitamin C & Aroma Cartridges", text: "Swap in a specialised cartridge for a gentler, refreshing shower." },
   { n: "04", title: "Share your routine", text: "Post it on Instagram or X with #NoMoreBadHairDays #TheNaturalWay." },
 ];
 

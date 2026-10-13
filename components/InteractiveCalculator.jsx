@@ -12,11 +12,11 @@ import { getProduct } from "@/data/products";
 // Hard-water problem → the products that fix it (from the company profile)
 const concerns = [
   { label: "Hair fall", fix: ["shower-tap-filter", "hard-water-shampoo"] },
-  { label: "Frizzy, dull hair", fix: ["hard-water-shampoo", "boar-bristle-brush"] },
-  { label: "Dry, itchy skin", fix: ["shower-tap-filter", "hard-water-shower-gel"] },
-  { label: "Chlorine smell", fix: ["shower-tap-filter"] },
-  { label: "Fabric losing softness", fix: ["washing-machine-filter", "hard-water-liquid-detergent"] },
-  { label: "Hard water in every tap", fix: ["point-of-entry-filter"] },
+  { label: "Frizzy, dull hair", fix: ["hard-water-shampoo"] },
+  { label: "Dry, itchy skin", fix: ["shower-tap-filter", "vitamin-c-cartridge"] },
+  { label: "Chlorine smell", fix: ["shower-tap-filter", "vitamin-c-cartridge"] },
+  { label: "Fabric losing softness", fix: ["washing-machine-filter"] },
+  { label: "Dirty tank water", fix: ["water-tank-sink-filter", "kitchen-tap-filter"] },
 ];
 
 export default function InteractiveCalculator() {
@@ -37,7 +37,7 @@ export default function InteractiveCalculator() {
             <Reveal delay={250}>
               <p className="mt-6 max-w-md text-sm leading-relaxed text-muted sm:text-base">
                 Hair fall from hard water? Pair a shower filter with a hard water shampoo. Fabrics losing their shine? A
-                washing machine filter and a hard water detergent. Pick what bothers you and we&apos;ll build your routine.
+                washing machine filter. Pick what bothers you and we&apos;ll build your routine.
               </p>
             </Reveal>
             <Reveal delay={400}>

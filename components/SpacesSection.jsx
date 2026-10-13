@@ -9,19 +9,19 @@ const spaces = [
   {
     title: "Bathroom",
     text: "Filtered shower water for less hair fall and softer skin, plus a hard water hair care routine.",
-    includes: ["Shower & Tap Filter", "Hard water shampoo (next)", "Rain & multi-flow showers (soon)"],
+    includes: ["Shower & Tap Filter", "Vitamin C & aroma cartridges (in R&D)", "Hard water shampoo (in R&D)"],
     image: "/images/gallery/spray.jpg",
   },
   {
     title: "Kitchen & taps",
-    text: "The same 5-layer filter fits your wash basin and kitchen taps for everyday washing and cleaning.",
-    includes: ["Filter on any ½″ tap", "Replacement cartridges", "Whole-house filter (soon)"],
+    text: "Cleaner water at the kitchen tap and sink, from the storage tank to the rain on your roof.",
+    includes: ["Kitchen tap filter (in R&D)", "Water tank sink filter (in R&D)", "Rainwater harvesting (in R&D)"],
     image: "/images/gallery/pouring.jpg",
   },
   {
     title: "Laundry",
     text: "Fabric losing its shine and softness? Treat the water going into your washing machine.",
-    includes: ["Washing machine filter (soon)", "Hard water detergent (soon)"],
+    includes: ["Washing machine filter (in R&D)"],
     image: "/images/gallery/splash.jpg",
   },
 ];
