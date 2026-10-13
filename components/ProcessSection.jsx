@@ -22,7 +22,7 @@ const stages = [
   {
     Icon: Factory,
     title: "Manufacturing",
-    text: "Manufacturing is fully in-house. Our own machines and assembly lines take every product from raw part to finished filter.",
+    text: "Manufacturing and assembly run in our own facility, with material inspection and quality checks at every stage up to the finished filter.",
     points: ["Injection moulding, pressing & punching", "CNC & VMC machining", "Ultrasonic welding", "5 assembly lines"],
   },
 ];

@@ -7,12 +7,12 @@ import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
 
 const images = [
-  { src: "/images/photos/factory.webp", caption: "Our factory" },
-  { src: "/images/photos/reception.webp", caption: "Hydro Hub HQ" },
-  { src: "/images/photos/packaging.webp", caption: "Packed under your brand" },
-  { src: "/images/photos/truck.webp", caption: "Delivered at scale" },
-  { src: "/images/photos/polo.webp", caption: "Our team" },
-  { src: "/images/photos/cap.webp", caption: "Hydro Hub industries" },
+  { src: "/images/photos/factory.webp", caption: "Brand signage" },
+  { src: "/images/photos/reception.webp", caption: "Office identity" },
+  { src: "/images/photos/packaging.webp", caption: "Packaging design" },
+  { src: "/images/photos/truck.webp", caption: "Fleet livery" },
+  { src: "/images/photos/polo.webp", caption: "Team apparel" },
+  { src: "/images/photos/cap.webp", caption: "Brand merchandise" },
 ];
 
 export default function Gallery() {
@@ -42,7 +42,7 @@ export default function Gallery() {
               <span className="text-sm font-medium text-brand">Gallery</span>
             </Reveal>
             <TextReveal
-              lines={["Hydro Hub, in *action*"]}
+              lines={["The Hydro Hub *brand*"]}
               className="mt-2 text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
             />
           </div>

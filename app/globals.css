@@ -62,13 +62,12 @@ h1, h2, h3, h4 {
 }
 
 /* Brand divider — the logo's slanted bars, in the logo gradient (water blue -> navy).
-   The gradient is the fill; a tiled parallelogram mask cuts it into bars and loops seamlessly. */
+   The gradient is the fill; a tiled parallelogram mask cuts it into bars. */
 .brand-bars {
   --tile: 16px;
   background: linear-gradient(90deg, var(--color-cyan), var(--color-brand) 70%, var(--color-navy));
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 10' preserveAspectRatio='none'%3E%3Cpolygon points='8,0 22,0 14,10 0,10'/%3E%3C/svg%3E") 0 0 / var(--tile) 100% repeat-x;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 10' preserveAspectRatio='none'%3E%3Cpolygon points='8,0 22,0 14,10 0,10'/%3E%3C/svg%3E") 0 0 / var(--tile) 100% repeat-x;
-  animation: bars-drift 2.4s linear infinite;
 }
 
 @media (min-width: 640px) {
@@ -79,13 +78,6 @@ h1, h2, h3, h4 {
 .fog-x {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
-}
-
-@keyframes bars-drift {
-  to {
-    -webkit-mask-position: var(--tile) 0;
-    mask-position: var(--tile) 0;
-  }
 }
 
 /* Scrollbar */
@@ -271,9 +263,5 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
   .is-visible .grow-bar,
   .is-visible .grow-x {
     opacity: 1;
-  }
-
-  .brand-bars {
-    animation: none;
   }
 }

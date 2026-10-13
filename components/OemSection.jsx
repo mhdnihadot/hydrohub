@@ -8,11 +8,11 @@ import { Reveal, TextReveal, CountUp } from "./motion";
 // OEM offer — what Hydro Hub manufactures for other brands (all facts from the company brief).
 
 const offer = [
-  "Custom designs built to your specification",
+  "Product concept development & custom design",
   "In-house R&D led by a dedicated Dr.",
-  "Dedicated engineers on every project",
-  "Injection moulding, pressing, punching, CNC & VMC",
-  "Ultrasonic welding & 5 assembly lines",
+  "Prototype development with dedicated engineers",
+  "Injection moulding, CNC & VMC, ultrasonic welding on 5 assembly lines",
+  "Quality inspection & private-label manufacturing support",
 ];
 
 export default function OemSection() {
@@ -23,7 +23,7 @@ export default function OemSection() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="text-sm font-medium text-brand">OEM manufacturing</span>
+              <span className="text-sm font-medium text-brand">OEM &amp; ODM manufacturing</span>
             </Reveal>
             <TextReveal
               lines={["Your brand,", "built in *our* factory"]}
@@ -50,7 +50,7 @@ export default function OemSection() {
                 </span>
               </div>
               <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-[32px]">
-                R&amp;D and manufacturing of any water-related product, for your brand
+                R&amp;D, design and manufacturing of water solutions, for your brand
               </h3>
               <ul className="mt-6 space-y-3">
                 {offer.map((s, i) => (
@@ -92,23 +92,23 @@ export default function OemSection() {
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-[40%_center] transition-transform duration-[1.5s] ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent" />
-              <span className="relative text-xs font-semibold uppercase tracking-[0.14em] text-aqua">Trusted by</span>
-              <p className="relative mt-2 max-w-sm text-2xl font-semibold leading-snug text-white sm:text-3xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/80 via-45% to-transparent" />
+              <span className="relative w-fit rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Trusted by</span>
+              <p className="relative mt-3 max-w-sm text-2xl font-semibold leading-snug text-white drop-shadow-[0_2px_12px_rgba(17,20,58,0.6)] sm:text-3xl">
                 Eureka Forbes · Aquaguard
               </p>
               <div className="relative mt-6 grid grid-cols-2 gap-3">
                 <div className="rounded-xl bg-white/95 p-4">
-                  <div className="font-display text-2xl font-semibold tracking-tight text-ink">
+                  <div className="whitespace-nowrap font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
                     <CountUp to={1000000} duration={1800} group />
                   </div>
                   <div className="mt-0.5 text-xs text-muted">production capacity</div>
                 </div>
                 <div className="rounded-xl bg-white/95 p-4">
-                  <div className="font-display text-2xl font-semibold tracking-tight text-ink">
-                    <CountUp to={16500} duration={1600} group /> sq ft
+                  <div className="whitespace-nowrap font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+                    <CountUp to={16500} duration={1600} group />
                   </div>
-                  <div className="mt-0.5 text-xs text-muted">in-house factory</div>
+                  <div className="mt-0.5 text-xs text-muted">sq ft in-house factory</div>
                 </div>
               </div>
             </div>

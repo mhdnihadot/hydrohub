@@ -1,13 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, Waves, ShieldCheck, CalendarClock, Layers } from "lucide-react";
+import { ArrowRight, Waves } from "lucide-react";
 import Container from "./Container";
 import { Reveal, TextReveal } from "./motion";
 
-const facts = [
-  { Icon: Layers, label: "Filtration", value: "5 layers", note: "Made for Indian water" },
-  { Icon: CalendarClock, label: "Cartridge life", value: "25,000 L", note: "or 6 months · easy replacements" },
-  { Icon: ShieldCheck, label: "Warranty", value: "2.5 years", note: "Brass connectors built to last" },
-];
+const values = ["Affordable", "Sustainable", "Eco-friendly"];
 
 export default function PartnerTicker() {
   return (
@@ -46,8 +42,7 @@ export default function PartnerTicker() {
               </p>
               <p>
                 <span className="font-semibold text-ink">It shows up in your daily chores</span>: washing, bathing and
-                cleaning, in ways you don&apos;t even notice. Our vision is to become the top brand in non-drinking
-                residential water filtration.
+                cleaning, in ways you don&apos;t even notice.
               </p>
             </Reveal>
           </div>
@@ -64,17 +59,23 @@ export default function PartnerTicker() {
                 </h3>
               </div>
 
-              <ul className="relative grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {facts.map(({ Icon, label, value, note }, i) => (
-                  <Reveal as="li" key={label} delay={350 + i * 120} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-navy">
-                      <Icon className="h-3 w-3" strokeWidth={1.5} /> {label}
+              {/* Vision + values, balancing the mission above */}
+              <div className="relative grid grid-cols-1 gap-6 border-t border-white/15 pt-6 sm:grid-cols-2 sm:items-end">
+                <Reveal delay={350}>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-aqua">Our vision</span>
+                  <p className="mt-2 text-base leading-snug text-white/90 sm:text-lg">
+                    A trusted Indian water technology and manufacturing company, recognised for innovation, engineering and
+                    long-term OEM/ODM partnerships.
+                  </p>
+                </Reveal>
+                <Reveal delay={450} className="flex flex-wrap gap-2 sm:justify-end">
+                  {values.map((v) => (
+                    <span key={v} className="rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-medium text-white">
+                      {v}
                     </span>
-                    <div className="mt-3 font-display text-lg font-semibold">{value}</div>
-                    <div className="text-[11px] text-white/80">{note}</div>
-                  </Reveal>
-                ))}
-              </ul>
+                  ))}
+                </Reveal>
+              </div>
             </div>
           </Reveal>
         </div>

@@ -1,7 +1,7 @@
 // Facts from the company profile, shown as a light glass card beside the hero copy
 export default function HeroFactCard() {
   return (
-    <div className="w-full rounded-2xl border border-white/20 bg-brand/80 p-5 text-white shadow-[0_20px_50px_-20px_rgba(17,20,58,0.6)] backdrop-blur-md sm:p-6">
+    <div className="w-full rounded-2xl border border-white/20 bg-brand/90 p-5 text-white shadow-[0_20px_50px_-20px_rgba(17,20,58,0.6)] sm:p-6">
       <p className="font-display text-[44px] font-semibold leading-none tracking-[-0.03em]">
         97<span className="text-aqua">%</span>
       </p>

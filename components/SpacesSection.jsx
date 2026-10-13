@@ -4,17 +4,17 @@ import Container from "./Container";
 import EnquireButton from "./EnquireButton";
 import { Reveal, TextReveal } from "./motion";
 
-// Solutions by where the water is used at home.
+// Domestic applications we develop and manufacture for partner brands.
 const spaces = [
   {
     title: "Bathroom",
-    text: "Filtered shower water for less hair fall and softer skin, plus a hard water hair care routine.",
+    text: "Shower water filtration products and cartridges, developed and manufactured for partner brands.",
     includes: ["Shower & Tap Filter", "Vitamin C & aroma cartridges (in R&D)", "Hard water shampoo (in R&D)"],
     image: "/images/gallery/spray.webp",
   },
   {
     title: "Kitchen & taps",
-    text: "Cleaner water at the kitchen tap and sink, from the storage tank to the rain on your roof.",
+    text: "Tap, sink and storage filtration for domestic use, from concept to finished product.",
     includes: ["Kitchen tap filter (in R&D)", "Water tank sink filter (in R&D)", "Rainwater harvesting (in R&D)"],
     image: "/images/gallery/pouring.webp",
   },
@@ -36,7 +36,7 @@ export default function SpacesSection() {
           </div>
           <Reveal delay={200}>
             <p className="max-w-sm text-sm leading-relaxed text-muted">
-              From your shower to your kitchen sink, better water for every daily chore.
+              Domestic water filtration we develop and manufacture for brands, from the shower to the kitchen sink.
             </p>
           </Reveal>
         </div>

@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { ArrowUpRight, Check, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Container from "./Container";
 import EnquireButton from "./EnquireButton";
 import { Reveal, TextReveal } from "./motion";
 import { products } from "@/data/products";
 
 // Home-page product story, told in the same order as the company profile:
-// Why partner with us (vs imports) → In development → Expanding the range.
+// Why choose Hydro Hub → In development → Expanding the range.
 
-// Manufacturing with Hydro Hub vs sourcing generic imported products
-const compare = [
-  ["In-house R&D led by a dedicated Dr.", "Off-the-shelf designs, no R&D"],
-  ["Custom designs built to your specification", "Fixed catalogue models"],
-  ["Dedicated engineers on your project", "Little or no engineering support"],
-  ["All manufacturing in-house: moulding, CNC & VMC, welding", "Parts spread across outsourced suppliers"],
-  ["5 assembly lines, 10,00,000 production capacity", "Supply depends on overseas factories"],
-  ["Made in India, close to your market", "Long shipping lead times"],
-  ["Reasonable, factory-direct pricing", "Import duties and middleman margins"],
+// Why choose Hydro Hub Industries (company profile)
+const reasons = [
+  "R&D-focused product development",
+  "Integrated development-to-manufacturing approach",
+  "OEM and ODM partnership orientation",
+  "Focus on domestic water filtration products",
+  "Market-oriented product design",
+  "Continuous improvement and quality focus",
+  "Customised solutions for business requirements",
 ];
 
 const actives = [
@@ -42,7 +42,7 @@ function Label({ children, light = false }) {
 }
 
 // Brand divider: rows of the logo's slanted bars in the logo gradient (brand book pattern pages).
-// Full-bleed (outside the Container). Draws in on scroll, then the bars drift slowly. Styles: .brand-bars in app/globals.css.
+// Full-bleed (outside the Container). Draws in on scroll. Styles: .brand-bars in app/globals.css.
 function Stripes() {
   return (
     <Reveal className="fog-x mt-16 sm:mt-24" aria-hidden="true">
@@ -55,35 +55,45 @@ export default function ProductStory() {
   return (
     <section id="products" className="pb-16 sm:pb-24">
       <Container>
-        {/* 1 — Hydro Hub vs generic */}
+        {/* 1 — Why choose Hydro Hub */}
         <div>
           <div className="flex flex-col items-start gap-5">
             <Reveal>
               <Label>Why partner with us</Label>
             </Reveal>
             <TextReveal
-              lines={["Manufacture with us, not *imports*"]}
+              lines={["Why choose", "Hydro Hub *Industries?*"]}
               className="text-[28px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-4xl"
             />
           </div>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-line">
-            <div className="grid grid-cols-2 bg-frost font-display text-sm font-semibold text-ink sm:text-base">
-              <div className="border-r border-line px-4 py-4 sm:px-6">Hydro Hub</div>
-              <div className="px-4 py-4 text-muted sm:px-6">Importing generic products</div>
-            </div>
-            {compare.map(([ours, other], i) => (
-              <Reveal key={ours} delay={i * 70} className="grid grid-cols-2 border-t border-line text-sm">
-                <div className="flex items-start gap-2.5 border-r border-line px-4 py-4 text-ink sm:px-6">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" strokeWidth={2} />
-                  {ours}
-                </div>
-                <div className="flex items-start gap-2.5 px-4 py-4 text-muted sm:px-6">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-muted/60" strokeWidth={2} />
-                  {other}
-                </div>
+          {/* 7 reasons + a CTA tile = 8, so the grid is always full (4×2 desktop, 2 cols tablet, 1 col mobile) */}
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+            {reasons.map((r, i) => (
+              <Reveal
+                as="li"
+                key={r}
+                delay={i * 60}
+                className="group flex items-center gap-4 rounded-2xl border border-line bg-white p-4 transition-colors duration-300 hover:border-brand/40 hover:bg-sky sm:flex-col sm:items-start sm:justify-between sm:gap-6 sm:p-6"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sky font-display text-xs font-semibold text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
+                  0{i + 1}
+                </span>
+                <span className="text-sm font-medium leading-snug text-ink sm:text-base">{r}</span>
               </Reveal>
             ))}
-          </div>
+            <Reveal as="li" delay={reasons.length * 60}>
+              <EnquireButton
+                interest="Bulk / OEM"
+                arrow={false}
+                className="group flex h-full w-full items-center justify-between gap-4 rounded-2xl bg-brand p-4 text-left text-white transition-colors duration-300 hover:bg-brand-hover sm:flex-col sm:items-start sm:p-6"
+              >
+                <span className="text-sm font-semibold leading-snug sm:text-base">Partner with us on your next product</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-brand transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+                </span>
+              </EnquireButton>
+            </Reveal>
+          </ul>
         </div>
 
         {/* 2 — From our R&D: hard water shampoo */}

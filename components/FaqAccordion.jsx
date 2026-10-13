@@ -8,15 +8,15 @@ import { Reveal, TextReveal } from "./motion";
 const faqs = [
   {
     q: "Do you manufacture for other brands?",
-    a: "Yes, that's our core business. Since 2019 we've developed and manufactured water products for OEM brands, including Eureka Forbes (Aquaguard), from our own factory.",
+    a: "Yes, that's our core business. Since 2019 we've developed and manufactured water products for brands through OEM, ODM and private-label partnerships, including Eureka Forbes (Aquaguard), from our own factory.",
   },
   {
     q: "Can you build to our own design?",
     a: "Yes. Our dedicated engineers develop custom designs to your specification, backed by in-house R&D led by a dedicated Dr., at a reasonable price.",
   },
   {
-    q: "What do you make in-house?",
-    a: "Everything. We run injection moulding, pressing and punching, CNC and VMC machining, and ultrasonic welding, with 5 assembly lines taking each product from raw part to finished product.",
+    q: "What do you handle in-house?",
+    a: "R&D, product design, prototyping, manufacturing and assembly, and quality inspection. We run injection moulding, pressing and punching, CNC and VMC machining, and ultrasonic welding on 5 assembly lines, and source materials and components where a project needs them.",
   },
   {
     q: "How much can you produce?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "What products can you manufacture?",
-    a: "Any water-related product. We're not limited to one product: our R&D team and engineers can develop and manufacture to your brief. Today we make 5-layer shower & tap filters and cartridges, and our R&D team is developing aroma, Vitamin C, hydrogen and alkaline cartridges, washing machine, tank and kitchen tap filters, rainwater harvesting systems and a hard water shampoo.",
+    a: "Water solutions for your brand, not a single product. Our focus is domestic water filtration: shower filters, tap filters, cartridges and components, and water treatment accessories, plus new product concepts developed for OEM/ODM customers. Our R&D team is currently developing aroma, Vitamin C, hydrogen and alkaline cartridges, washing machine, tank and kitchen tap filters, rainwater harvesting systems and a hard water shampoo. Availability and specifications depend on the product range and project requirements.",
   },
 ];
 

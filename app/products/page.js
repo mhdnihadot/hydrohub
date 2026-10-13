@@ -24,7 +24,7 @@ export default async function ProductsPage({ searchParams }) {
         crumbs={[{ label: "Products", href: active ? "/products" : undefined }, ...(active ? [{ label: active.name }] : [])]}
         eyebrow="Products"
         title={active ? active.name : "What we manufacture"}
-        intro={active ? active.tagline : "A few of the products we design and build in-house. We develop and manufacture any water-related product, so bring us your idea too."}
+        intro={active ? active.tagline : "Products we develop and manufacture, and new concepts in our R&D. Availability and specifications depend on the product range and project requirements, so bring us your idea too."}
       />
 
       <Container>

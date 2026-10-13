@@ -10,7 +10,7 @@ import { Reveal, useInView } from "./motion";
 const testimonials = [
   {
     author: "Our vision",
-    quote: "To become the top brand in non-drinking residential water filtration.",
+    quote: "To become a trusted Indian water technology and manufacturing company, recognised for product innovation, engineering capability, manufacturing excellence and long-term OEM/ODM partnerships.",
     image: "/images/photos/truck.webp",
   },
   {
@@ -19,8 +19,8 @@ const testimonials = [
     image: "/images/photos/water.webp",
   },
   {
-    author: "#NoMoreBadHairDays",
-    quote: "Water is the first and last thing to touch your hair in the shower. Make it good water.",
+    author: "Partner with us",
+    quote: "Let's develop the next generation of water solutions together.",
     image: "/images/photos/reception.webp",
   },
 ];
@@ -29,11 +29,11 @@ const LEAVE_MS = 650;
 
 // Where a card sits in the stack: 0 = front, 1–2 = peeking behind (iOS notification style), rest hidden.
 function stackStyle(pos, leaving) {
-  if (leaving) return { transform: "translate3d(0,-48px,0) scale(1.03)", opacity: 0, zIndex: 40, filter: "brightness(1)" };
-  if (pos === 0) return { transform: "translate3d(0,0,0) scale(1)", opacity: 1, zIndex: 30, filter: "brightness(1)" };
-  if (pos === 1) return { transform: "translate3d(0,22px,0) scale(0.95)", opacity: 1, zIndex: 20, filter: "brightness(0.8)" };
-  if (pos === 2) return { transform: "translate3d(0,42px,0) scale(0.9)", opacity: 1, zIndex: 10, filter: "brightness(0.65)" };
-  return { transform: "translate3d(0,42px,0) scale(0.9)", opacity: 0, zIndex: 0, filter: "brightness(0.65)" };
+  if (leaving) return { transform: "translate3d(0,-48px,0) scale(1.03)", opacity: 0, zIndex: 40, dim: 0 };
+  if (pos === 0) return { transform: "translate3d(0,0,0) scale(1)", opacity: 1, zIndex: 30, dim: 0 };
+  if (pos === 1) return { transform: "translate3d(0,22px,0) scale(0.95)", opacity: 1, zIndex: 20, dim: 0.2 };
+  if (pos === 2) return { transform: "translate3d(0,42px,0) scale(0.9)", opacity: 1, zIndex: 10, dim: 0.35 };
+  return { transform: "translate3d(0,42px,0) scale(0.9)", opacity: 0, zIndex: 0, dim: 0.35 };
 }
 
 export default function TestimonialSlider() {
@@ -86,10 +86,10 @@ export default function TestimonialSlider() {
                 <article
                   key={t.image}
                   aria-hidden={!front}
-                  className={`absolute inset-x-0 top-0 bottom-[42px] isolate flex origin-bottom flex-col justify-end overflow-hidden rounded-3xl bg-navy-deep p-5 pb-24 shadow-[0_20px_50px_-20px_rgba(8,24,39,0.45)] transition-[transform,opacity,filter] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform sm:p-12 lg:p-14 ${
+                  className={`absolute inset-x-0 top-0 bottom-[42px] isolate flex origin-bottom flex-col justify-end overflow-hidden rounded-3xl bg-navy-deep p-5 pb-24 shadow-[0_20px_50px_-20px_rgba(8,24,39,0.45)] transition-[transform,opacity] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform sm:p-12 lg:p-14 ${
                     front && inView ? "is-visible" : ""
                   }`}
-                  style={stackStyle(pos, leaving === i)}
+                  style={(({ dim, ...st }) => st)(stackStyle(pos, leaving === i))}
                 >
                   <Image
                     src={t.image}
@@ -100,6 +100,11 @@ export default function TestimonialSlider() {
                   />
                   <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent" />
                   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep/50 to-transparent" />
+                  {/* darkens cards waiting in the stack */}
+                  <div
+                    className="pointer-events-none absolute inset-0 z-10 bg-navy-deep transition-opacity duration-[650ms]"
+                    style={{ opacity: stackStyle(pos, leaving === i).dim }}
+                  />
 
                   <div className="max-w-3xl sm:pr-32">
                     <span className="word text-sm font-medium text-aqua" style={{ "--d": "150ms" }}>

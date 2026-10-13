@@ -8,10 +8,11 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // lerp (not a long fixed duration) keeps wheel/trackpad scrolling responsive; touch scrolling stays native.
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.14,
       smoothWheel: true,
+      syncTouch: false,
       anchors: { offset: -90 },
       autoRaf: true,
     });

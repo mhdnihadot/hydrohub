@@ -21,8 +21,8 @@ export default function Footer() {
             <div className="col-span-2 sm:col-span-3 lg:col-span-5">
               <Logo light className="h-12" />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/80">
-                Any water-related product, developed and manufactured for OEM brands. R&amp;D, product development and manufacturing,
-                all in-house. Made in India since 2019.
+                Water solutions, developed and manufactured for OEM & ODM partners. R&amp;D, product design, manufacturing
+                and quality control. Made in India since 2019.
               </p>
               <div className="mt-6 flex gap-2">
                 {socials.map((s) => (
