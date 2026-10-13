@@ -1,11 +1,10 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import Container from "./Container";
 import EnquiryForm from "./EnquiryForm";
 import { Reveal, TextReveal } from "./motion";
 
 const contacts = [
-  { Icon: Phone, label: "Call us", value: "+91 74066 16220", href: "tel:+917406616220" },
-  { Icon: Mail, label: "Email", value: "care@hydrohub.in", href: "mailto:care@hydrohub.in" },
+  { Icon: Mail, label: "Email", value: "info@hydrohubindustries.in", href: "mailto:info@hydrohubindustries.in" },
   {
     Icon: MapPin,
     label: "Address",
