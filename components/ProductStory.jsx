@@ -41,12 +41,12 @@ function Label({ children, light = false }) {
   );
 }
 
-// The profile's two-tone footer stripe, drawn in on scroll
+// Brand divider: rows of the logo's slanted bars in the logo gradient (brand book pattern pages).
+// Full-bleed (outside the Container). Draws in on scroll, then the bars drift slowly. Styles: .brand-bars in app/globals.css.
 function Stripes() {
   return (
-    <Reveal className="mt-16 space-y-1.5 sm:mt-24" aria-hidden="true">
-      <div className="grow-x h-2.5 rounded-full bg-cyan" />
-      <div className="grow-x h-4 rounded-full bg-brand" style={{ "--d": "250ms" }} />
+    <Reveal className="fog-x mt-16 sm:mt-24" aria-hidden="true">
+      <div className="grow-x brand-bars h-2.5 sm:h-3" />
     </Reveal>
   );
 }
@@ -100,7 +100,7 @@ export default function ProductStory() {
           <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
             <Reveal variant="left" className="lg:col-span-5">
               <div className="relative h-full min-h-[360px] overflow-hidden rounded-2xl">
-                <Image src="/images/hero.jpg" alt="Healthy, bouncy hair" fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover object-[60%_center]" />
+                <Image src="/images/photos/water.webp" alt="Fresh water" fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover object-[60%_center]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <span className="text-xs font-medium uppercase tracking-wider text-aqua">Hydro Hub · 300 ml</span>
@@ -179,8 +179,8 @@ export default function ProductStory() {
           </ol>
         </div>
 
-        <Stripes />
       </Container>
+      <Stripes />
     </section>
   );
 }

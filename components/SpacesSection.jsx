@@ -10,19 +10,13 @@ const spaces = [
     title: "Bathroom",
     text: "Filtered shower water for less hair fall and softer skin, plus a hard water hair care routine.",
     includes: ["Shower & Tap Filter", "Vitamin C & aroma cartridges (in R&D)", "Hard water shampoo (in R&D)"],
-    image: "/images/gallery/spray.jpg",
+    image: "/images/gallery/spray.webp",
   },
   {
     title: "Kitchen & taps",
     text: "Cleaner water at the kitchen tap and sink, from the storage tank to the rain on your roof.",
     includes: ["Kitchen tap filter (in R&D)", "Water tank sink filter (in R&D)", "Rainwater harvesting (in R&D)"],
-    image: "/images/gallery/pouring.jpg",
-  },
-  {
-    title: "Laundry",
-    text: "Fabric losing its shine and softness? Treat the water going into your washing machine.",
-    includes: ["Washing machine filter (in R&D)"],
-    image: "/images/gallery/splash.jpg",
+    image: "/images/gallery/pouring.webp",
   },
 ];
 
@@ -36,18 +30,18 @@ export default function SpacesSection() {
               <span className="text-sm font-medium text-brand">Solutions</span>
             </Reveal>
             <TextReveal
-              lines={["Good water, every room"]}
+              lines={["Good water for", "better long life"]}
               className="mt-2 text-[32px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-5xl"
             />
           </div>
           <Reveal delay={200}>
             <p className="max-w-sm text-sm leading-relaxed text-muted">
-              From your shower to your washing machine, better water for every daily chore.
+              From your shower to your kitchen sink, better water for every daily chore.
             </p>
           </Reveal>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-5">
+        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-5">
           {spaces.map((s, i) => (
             <Reveal key={s.title} delay={i * 120} className="h-full">
               <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white">

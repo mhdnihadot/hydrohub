@@ -49,11 +49,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
             <Reveal className="lg:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl sm:aspect-[16/10]">
-                <Image src="/images/gallery/spray.jpg" alt="Water spraying, fresh and clean" fill sizes="(max-width: 1024px) 100vw, 700px" className="object-cover" />
+                <Image src="/images/photos/reception.webp" alt="Hydro Hub Industries reception" fill sizes="(max-width: 1024px) 100vw, 700px" className="object-cover" />
               </div>
             </Reveal>
             <Reveal delay={120} className="lg:col-span-5">
-              <div className="flex h-full flex-col justify-between gap-8 rounded-2xl bg-navy p-6 text-white sm:p-10">
+              <div className="flex h-full flex-col justify-between gap-8 rounded-2xl bg-brand p-6 text-white sm:p-10">
                 <div>
                   <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Our vision</h2>
                   <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">

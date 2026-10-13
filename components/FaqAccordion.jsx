@@ -8,7 +8,7 @@ import { Reveal, TextReveal } from "./motion";
 const faqs = [
   {
     q: "Do you manufacture for other brands?",
-    a: "Yes, that's our core business. Since 2019 we've developed and manufactured water products for OEM brands, including Eureka Forbes (Aquaguard), from our own 16,500 sq ft factory.",
+    a: "Yes, that's our core business. Since 2019 we've developed and manufactured water products for OEM brands, including Eureka Forbes (Aquaguard), from our own factory.",
   },
   {
     q: "Can you build to our own design?",
@@ -35,14 +35,14 @@ export default function FaqAccordion() {
     <section id="faq" className="pb-16 sm:pb-24">
       <Container>
         <Reveal variant="scale">
-          <div className="grid grid-cols-1 gap-10 rounded-3xl bg-navy px-5 py-12 sm:px-12 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:px-16 lg:py-24">
+          <div className="grid grid-cols-1 gap-10 rounded-3xl bg-brand px-5 py-12 sm:px-12 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:px-16 lg:py-24">
             <div className="lg:col-span-5">
               <TextReveal
                 lines={["Frequently", "Asked Questions"]}
                 className="text-[32px] font-semibold leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl"
               />
               <Reveal delay={250}>
-                <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65 sm:text-base">
+                <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/80 sm:text-base">
                   Clear answers for brands looking for a water filter manufacturing partner.
                 </p>
               </Reveal>
@@ -75,7 +75,7 @@ export default function FaqAccordion() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="max-w-xl pr-10 text-sm leading-relaxed text-white/60">{f.a}</p>
+                        <p className="max-w-xl pr-10 text-sm leading-relaxed text-white/80">{f.a}</p>
                       </div>
                     </div>
                   </Reveal>

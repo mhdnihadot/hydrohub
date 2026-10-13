@@ -11,22 +11,41 @@ import {
   WashingMachine,
   Factory,
   Wrench,
-  ChevronDown,
+  Flower2,
+  Citrus,
+  Atom,
+  Droplets,
+  Container,
+  CookingPot,
+  CloudRain,
   Phone,
   MessageCircle,
   Mail,
 } from "lucide-react";
 import { products } from "@/data/products";
 
+// Icon per product (falls back to a filter icon)
+const productIcons = {
+  "shower-tap-filter": ShowerHead,
+  "replacement-cartridge": Filter,
+  "hard-water-shampoo": Sparkles,
+  "aroma-flavour-1": Flower2,
+  "aroma-flavour-2": Flower2,
+  "vitamin-c-cartridge": Citrus,
+  "hydrogen-balls": Atom,
+  "alkaline-media": Droplets,
+  "washing-machine-filter": WashingMachine,
+  "water-tank-sink-filter": Container,
+  "kitchen-tap-filter": CookingPot,
+  "rainwater-harvesting-system": CloudRain,
+};
+
+// Options: the two OEM services, then every product. `value` is what gets sent.
 const interests = [
-  { label: "Bulk / OEM", Icon: Factory },
-  { label: "Custom design", Icon: Wrench },
-  { label: "Shower filter", Icon: ShowerHead },
-  { label: "Cartridge", Icon: Filter },
-  { label: "Hair & body", Icon: Sparkles },
-  { label: "Laundry / home", Icon: WashingMachine },
+  { value: "Bulk / OEM", Icon: Factory },
+  { value: "Custom design", Icon: Wrench },
+  ...products.map((p) => ({ value: p.name, label: p.name.replace(/^Hydro Hub /, ""), Icon: productIcons[p.slug] || Filter })),
 ];
-const interestFor = { "shower-tap": "Shower filter", "filter-media": "Cartridge", "hair-body": "Hair & body", laundry: "Laundry / home", home: "Laundry / home" };
 
 const contactModes = [
   { label: "Call", Icon: Phone },
@@ -46,11 +65,11 @@ function Label({ children, optional }) {
   );
 }
 
-// Enquiry form: interest, name, phone, preferred contact, email, product, message.
+// Enquiry form: what they need (services + products), name, phone, preferred contact, email, message.
 export default function EnquiryForm({ defaultProduct = "", defaultInterest = "", onDone, compact = false }) {
-  const [interest, setInterest] = useState(
-    () => defaultInterest || interestFor[products.find((p) => p.name === defaultProduct)?.category] || ""
-  );
+  // Several options can be picked (OEM buyers often want more than one product)
+  const [picked, setPicked] = useState(() => [defaultInterest, defaultProduct].filter(Boolean));
+  const toggle = (value) => setPicked((p) => (p.includes(value) ? p.filter((v) => v !== value) : [...p, value]));
   const [contact, setContact] = useState("Call");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [error, setError] = useState("");
@@ -58,7 +77,8 @@ export default function EnquiryForm({ defaultProduct = "", defaultInterest = "",
   async function onSubmit(e) {
     e.preventDefault();
     const payload = Object.fromEntries(new FormData(e.currentTarget).entries());
-    payload.interest = interest;
+    payload.interest = picked.join(", ");
+    payload.product = picked.filter((v) => products.some((p) => p.name === v)).join(", ");
     payload.contact = contact;
 
     setStatus("sending");
@@ -101,21 +121,25 @@ export default function EnquiryForm({ defaultProduct = "", defaultInterest = "",
     <form onSubmit={onSubmit} className="space-y-6">
       {/* 1. What do you need? */}
       <fieldset>
-        <legend className="mb-3 text-xs font-medium text-ink">What are you looking for?</legend>
-        <div className={`grid grid-cols-2 gap-2 ${compact ? "sm:grid-cols-3" : "sm:grid-cols-3 lg:grid-cols-6"}`}>
-          {interests.map(({ label, Icon }) => {
-            const active = interest === label;
+        <legend className="mb-3 flex w-full items-center justify-between text-xs font-medium text-ink">
+          What are you looking for?
+          <span className="font-normal text-muted">Pick any</span>
+        </legend>
+        {/* Chips wrap and stretch, so every row fills the full width on any screen */}
+        <div className="flex flex-wrap gap-2">
+          {interests.map(({ value, label = value, Icon }) => {
+            const active = picked.includes(value);
             return (
               <button
                 type="button"
-                key={label}
-                onClick={() => setInterest(active ? "" : label)}
+                key={value}
+                onClick={() => toggle(value)}
                 aria-pressed={active}
-                className={`flex flex-col items-start gap-3 rounded-xl border p-3 text-left text-xs font-medium transition-colors duration-300 ease-out ${
+                className={`flex min-h-11 flex-auto items-center gap-2 rounded-xl border px-3 py-2.5 text-left text-xs font-medium transition-colors duration-300 ease-out ${
                   active ? "border-brand bg-sky text-ink" : "border-line bg-white text-ink hover:border-ink/25"
                 }`}
               >
-                <Icon className={`h-5 w-5 transition-colors duration-300 ${active ? "text-brand" : "text-muted"}`} strokeWidth={1.5} />
+                <Icon className={`h-4 w-4 shrink-0 transition-colors duration-300 ${active ? "text-brand" : "text-muted"}`} strokeWidth={1.5} />
                 {label}
               </button>
             );
@@ -138,30 +162,16 @@ export default function EnquiryForm({ defaultProduct = "", defaultInterest = "",
             inputMode="tel"
             autoComplete="tel"
             pattern="[0-9+()\s-]{7,20}"
-            placeholder="+971 50 123 4567"
+            placeholder="+91 98765 43210"
             className={fieldCls}
           />
         </label>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
+        <label className="block sm:col-span-2">
           <Label optional={contact !== "Email"}>Email</Label>
           <input name="email" type="email" required={contact === "Email"} autoComplete="email" placeholder="you@example.com" className={fieldCls} />
-        </label>
-        <label className="block">
-          <Label optional>Product</Label>
-          <span className="relative block">
-            <select name="product" defaultValue={defaultProduct} className={`${fieldCls} appearance-none pr-10`}>
-              <option value="">Not sure yet</option>
-              {products.map((p) => (
-                <option key={p.slug} value={p.name}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" strokeWidth={1.5} />
-          </span>
         </label>
       </div>
 

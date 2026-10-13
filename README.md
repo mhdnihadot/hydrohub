@@ -1,6 +1,6 @@
 # hydrohub
 
-Marketing site for Hydro Hub Industries: the shower & tap filter, hard water hair care and upcoming laundry / whole-home filtration. Copy follows the company profile.
+Marketing site for Hydro Hub Industries: the shower & tap filter, hard water hair care and products in R&D for the kitchen and home. Copy follows the company profile.
 
 Next.js 16 (App Router) · Tailwind CSS v4 · Lenis smooth scroll · self-hosted Fontshare fonts (General Sans + Satoshi).
 

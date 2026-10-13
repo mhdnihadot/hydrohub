@@ -86,11 +86,11 @@ export default function OemSection() {
           <Reveal variant="right" delay={150} className="lg:col-span-6">
             <div className="group relative flex h-full min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl p-6 sm:p-8">
               <Image
-                src="/images/gallery/spray.jpg"
-                alt=""
+                src="/images/photos/packaging.webp"
+                alt="Hydro Hub filter packaging"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                className="object-cover object-[40%_center] transition-transform duration-[1.5s] ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent" />
               <span className="relative text-xs font-semibold uppercase tracking-[0.14em] text-aqua">Trusted by</span>

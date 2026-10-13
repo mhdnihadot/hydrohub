@@ -73,7 +73,7 @@ export default function EnquiryModal() {
         aria-modal="true"
         aria-labelledby="enquiry-title"
         data-lenis-prevent
-        className={`relative max-h-[92dvh] w-full max-w-xl overflow-y-auto rounded-t-3xl bg-white p-6 transition-[transform,opacity] sm:rounded-3xl sm:p-8 ${
+        className={`relative max-h-[92dvh] w-full max-w-xl overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-t-3xl bg-white p-6 transition-[transform,opacity] sm:rounded-3xl sm:p-8 ${
           shown
             ? "translate-y-0 opacity-100 duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:scale-100"
             : "translate-y-full duration-[280ms] ease-[cubic-bezier(0.4,0,1,1)] sm:translate-y-4 sm:scale-[0.97] sm:opacity-0"

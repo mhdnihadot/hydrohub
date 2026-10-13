@@ -1,13 +1,16 @@
-import { Phone, Mail, Headphones, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Container from "./Container";
 import EnquiryForm from "./EnquiryForm";
 import { Reveal, TextReveal } from "./motion";
 
 const contacts = [
   { Icon: Phone, label: "Call us", value: "+91 74066 16220", href: "tel:+917406616220" },
-  { Icon: Headphones, label: "Customer care (toll-free)", value: "1800-121-0599", href: "tel:18001210599" },
   { Icon: Mail, label: "Email", value: "care@hydrohub.in", href: "mailto:care@hydrohub.in" },
-  { Icon: MapPin, label: "Factory", value: "Aluva, Kochi, Kerala 683101" },
+  {
+    Icon: MapPin,
+    label: "Address",
+    value: "Site No 03, Survey No 56/2, Karigowda Layout, Machohalli Village, Bengaluru 560091, Karnataka, India",
+  },
 ];
 
 export default function EnquirySection() {
@@ -16,14 +19,14 @@ export default function EnquirySection() {
       <Container>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
           <Reveal variant="left" className="min-w-0 lg:col-span-5">
-            <div className="flex h-full flex-col justify-between gap-10 rounded-3xl bg-navy p-6 text-white sm:p-10">
+            <div className="flex h-full flex-col justify-between gap-10 rounded-3xl bg-brand p-6 text-white sm:p-10">
               <div>
                 <TextReveal
                   lines={["Let's build your", "*next* product"]}
                   accentClass="text-aqua"
                   className="text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-4xl"
                 />
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
+                <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
                   Looking for a manufacturing partner for your water filter brand? Leave your details and the
                   Hydro Hub team will call you back within one working day.
                 </p>
@@ -45,7 +48,7 @@ export default function EnquirySection() {
                       <Icon className="h-4 w-4" strokeWidth={1.5} />
                     </span>
                     <div className="min-w-0">
-                      <div className="text-[11px] text-white/50">{label}</div>
+                      <div className="text-[11px] text-white/70">{label}</div>
                       {href ? (
                         <a href={href} className="text-sm font-medium hover:text-aqua">
                           {value}

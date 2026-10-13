@@ -54,7 +54,7 @@ export default function PartnerTicker() {
 
           {/* Mission card — fills the right side */}
           <Reveal delay={200} variant="scale" className="h-full lg:col-span-7">
-            <div className="relative flex h-full min-h-[340px] flex-col justify-between gap-10 overflow-hidden rounded-2xl bg-navy p-6 text-white sm:p-10">
+            <div className="relative flex h-full min-h-[340px] flex-col justify-between gap-10 overflow-hidden rounded-2xl bg-brand p-6 text-white sm:p-10">
               <Waves className="pointer-events-none absolute -right-8 -top-8 h-56 w-56 text-white/[0.05]" strokeWidth={1} />
 
               <div className="relative">
@@ -71,7 +71,7 @@ export default function PartnerTicker() {
                       <Icon className="h-3 w-3" strokeWidth={1.5} /> {label}
                     </span>
                     <div className="mt-3 font-display text-lg font-semibold">{value}</div>
-                    <div className="text-[11px] text-white/60">{note}</div>
+                    <div className="text-[11px] text-white/80">{note}</div>
                   </Reveal>
                 ))}
               </ul>

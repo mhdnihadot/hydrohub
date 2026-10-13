@@ -38,7 +38,7 @@ export default function ProcessSection({ withFacts = true }) {
     <section id="process" className="scroll-mt-28 pb-16 sm:pb-24">
       <Container>
         <Reveal variant="scale">
-          <div className="overflow-hidden rounded-3xl bg-navy px-5 py-12 text-white sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+          <div className="overflow-hidden rounded-3xl bg-brand px-5 py-12 text-white sm:px-10 sm:py-16 lg:px-14 lg:py-20">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
                 <span className="inline-block bg-white px-3 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.14em] text-navy">
@@ -51,7 +51,7 @@ export default function ProcessSection({ withFacts = true }) {
                 />
               </div>
               <Reveal delay={250}>
-                <p className="max-w-sm text-sm leading-relaxed text-white/65 sm:text-base">
+                <p className="max-w-sm text-sm leading-relaxed text-white/80 sm:text-base">
                   Everything happens in-house: dedicated R&amp;D, dedicated engineers, our own machines and 5 assembly lines,
                   so you get custom designs at a reasonable price.
                 </p>
@@ -60,23 +60,24 @@ export default function ProcessSection({ withFacts = true }) {
 
             {/* Pipeline */}
             <div className="relative mt-12 sm:mt-16">
-              {/* connecting line (desktop) */}
-              <Reveal className="absolute left-0 right-0 top-6 hidden lg:block" aria-hidden="true">
-                <div className="grow-x h-px w-full bg-gradient-to-r from-cyan via-aqua/60 to-cyan" style={{ "--d": "300ms" }} />
-              </Reveal>
-
               <ol className="relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
                 {stages.map(({ Icon, title, text, points }, i) => (
                   <Reveal as="li" key={title} delay={200 + i * 220} className="flex flex-col">
-                    <div className="relative flex w-fit items-center gap-3 bg-navy pr-3">
-                      <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-cyan text-white ring-8 ring-navy">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-brand shadow-[0_8px_24px_-8px_rgba(17,20,58,0.5)]">
                         <Icon className="h-5 w-5" strokeWidth={1.5} />
                       </span>
-                      <span className="font-display text-sm font-semibold text-aqua">Step 0{i + 1}</span>
+                      <span className="font-display text-sm font-semibold text-white">Step 0{i + 1}</span>
+                      {/* connector to the next step (desktop) */}
+                      <span
+                        aria-hidden="true"
+                        className="grow-x hidden h-px flex-1 bg-gradient-to-r from-white/60 to-white/10 lg:block"
+                        style={{ "--d": `${400 + i * 220}ms` }}
+                      />
                     </div>
                     <div className="mt-5 flex flex-1 flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors duration-300 hover:bg-white/[0.07]">
                       <h3 className="text-2xl font-semibold tracking-tight">{title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/65">{text}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-white/80">{text}</p>
                       <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-5">
                         {points.map((p) => (
                           <li key={p} className="flex items-start gap-2.5 text-sm text-white/90">
@@ -100,7 +101,7 @@ export default function ProcessSection({ withFacts = true }) {
                         <CountUp to={f.to} from={f.from || 0} group={f.group} />
                         {f.suffix}
                       </div>
-                      <div className="mt-1 text-xs text-white/55 sm:text-sm">{f.label}</div>
+                      <div className="mt-1 text-xs text-white/75 sm:text-sm">{f.label}</div>
                     </Reveal>
                   ))}
                 </div>

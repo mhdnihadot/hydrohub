@@ -33,7 +33,7 @@ export const metadata = {
     template: "%s · Hydro Hub",
   },
   description:
-    "Hydro Hub Industries develops and manufactures water-related products for OEM brands: in-house R&D, product development and manufacturing in a 16,500 sq ft factory in Kerala, India.",
+    "Hydro Hub Industries develops and manufactures water-related products for OEM brands: in-house R&D, product development and manufacturing in a 16,500 sq ft factory in Bengaluru, India.",
 };
 
 export const viewport = {

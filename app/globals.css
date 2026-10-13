@@ -1,30 +1,31 @@
 @import "tailwindcss";
 
-/* Hydro Hub — white + water-blue theme.
+/* Hydro Hub — white + brand navy / water-blue theme (from the brand book).
    Use these as Tailwind classes: bg-navy, text-ink, bg-brand, text-aqua, bg-sky, bg-ice, text-muted, border-line … */
 @theme {
   /* Self-hosted Fontshare fonts (app/fonts, wired up in app/layout.js) */
   --font-sans: var(--font-satoshi), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: var(--font-general-sans), var(--font-satoshi), sans-serif;
 
-  /* Restrained palette: white, one confident blue, deep navy, hairline greys. */
-  --color-ink: #0F1B2D;          /* headings / primary text */
-  --color-muted: #5E6B7D;        /* body copy */
-  --color-line: #E4E9F0;         /* hairlines */
+  /* Brand book palette (hydro hub.pdf → Colours): navy #2C3274, water blue #539BC7, black #181918,
+     and the navy → water-blue gradient. Dark surfaces are deep shades of the brand navy. */
+  --color-ink: #181918;          /* headings / primary text (brand black) */
+  --color-muted: #5E6472;        /* body copy */
+  --color-line: #E3E6EF;         /* hairlines */
 
-  --color-navy: #0C2236;         /* dark surfaces */
-  --color-navy-deep: #081827;
-  --color-navy-soft: #17324F;
+  --color-navy: #1A1E4A;         /* dark surfaces (deep brand navy) */
+  --color-navy-deep: #11143A;
+  --color-navy-soft: #262B62;
 
-  --color-brand: #2356A4;        /* the one accent: buttons, links, highlights */
-  --color-brand-hover: #1C478A;
-  --color-water: #7EA6F2;        /* secondary blue (charts) */
-  --color-aqua: #BCD4FF;         /* soft accent on dark surfaces */
-  --color-cyan: #20A8DE;         /* "water blue" from the profile (stripes, accents) */
+  --color-brand: #2C3274;        /* brand navy: buttons, links, highlights */
+  --color-brand-hover: #222760;
+  --color-water: #539BC7;        /* brand water blue (charts, bars) */
+  --color-aqua: #A9CFE6;         /* soft water blue on dark surfaces */
+  --color-cyan: #539BC7;         /* brand water blue (stripes, accents) */
 
-  --color-sky: #EEF3F9;          /* light surface */
+  --color-sky: #EEF4F9;          /* light surface (water-blue tint) */
   --color-ice: #F6F8FB;
-  --color-frost: #F1F4F8;        /* chips / hover fills */
+  --color-frost: #F1F3F8;        /* chips / hover fills */
 }
 
 html {
@@ -60,11 +61,38 @@ h1, h2, h3, h4 {
   color: #FFFFFF;
 }
 
+/* Brand divider — the logo's slanted bars, in the logo gradient (water blue -> navy).
+   The gradient is the fill; a tiled parallelogram mask cuts it into bars and loops seamlessly. */
+.brand-bars {
+  --tile: 16px;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-brand) 70%, var(--color-navy));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 10' preserveAspectRatio='none'%3E%3Cpolygon points='8,0 22,0 14,10 0,10'/%3E%3C/svg%3E") 0 0 / var(--tile) 100% repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 10' preserveAspectRatio='none'%3E%3Cpolygon points='8,0 22,0 14,10 0,10'/%3E%3C/svg%3E") 0 0 / var(--tile) 100% repeat-x;
+  animation: bars-drift 2.4s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .brand-bars { --tile: 22px; }
+}
+
+/* Fog: fade the left and right edges into the page */
+.fog-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+
+@keyframes bars-drift {
+  to {
+    -webkit-mask-position: var(--tile) 0;
+    mask-position: var(--tile) 0;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F1F6FC; }
-::-webkit-scrollbar-thumb { background: #C9D8EA; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #A9BFD9; }
+::-webkit-scrollbar-track { background: #F1F3F8; }
+::-webkit-scrollbar-thumb { background: #C3CBE0; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #9AA4C8; }
 
 /* Revenue range slider (calculator) — fill set via --fill */
 input[type="range"].custom-slider {
@@ -79,8 +107,8 @@ input[type="range"].custom-slider {
     to right,
     var(--color-navy) 0%,
     var(--color-navy) var(--fill, 50%),
-    rgba(10, 37, 64, 0.18) var(--fill, 50%),
-    rgba(10, 37, 64, 0.18) 100%
+    rgba(26, 30, 74, 0.18) var(--fill, 50%),
+    rgba(26, 30, 74, 0.18) 100%
   );
 }
 
@@ -114,14 +142,6 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
 }
 
 /* Hero photo settles in on load */
-@keyframes hero-zoom {
-  from { transform: scale(1.06); }
-  to { transform: scale(1); }
-}
-
-.hero-zoom {
-  animation: hero-zoom 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
 
 /* Hover-expand row (bento, gallery): on desktop the hovered card grows, siblings shrink.
    Children set their resting size with --grow. Below lg the parent is a normal grid. */
@@ -253,7 +273,7 @@ input[type="range"].custom-slider:active::-webkit-slider-thumb {
     opacity: 1;
   }
 
-  .hero-zoom {
+  .brand-bars {
     animation: none;
   }
 }

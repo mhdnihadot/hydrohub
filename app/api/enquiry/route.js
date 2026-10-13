@@ -15,9 +15,9 @@ export async function POST(request) {
     name: clean(body.name, 100),
     phone: clean(body.phone, 30),
     email: clean(body.email, 150),
-    interest: clean(body.interest, 50),
+    interest: clean(body.interest, 600),
     contact: clean(body.contact, 20),
-    product: clean(body.product, 100),
+    product: clean(body.product, 600),
     message: clean(body.message, 1000),
     receivedAt: new Date().toISOString(),
   };

@@ -9,19 +9,18 @@ export default function Hero() {
   return (
     <section id="top" className="pt-[80px] sm:pt-[88px]">
       <Container>
-        <div className="relative isolate flex min-h-[600px] flex-col justify-end overflow-hidden rounded-3xl bg-navy-deep px-5 pb-6 pt-24 sm:min-h-[640px] sm:px-10 sm:pb-10 lg:min-h-[660px] lg:px-14 lg:pb-14">
-          {/* Photo + water-blue grading */}
-          <div className="absolute inset-0 -z-10">
+        <div className="relative isolate flex min-h-[460px] flex-col justify-end overflow-hidden rounded-3xl bg-brand px-5 pb-6 pt-56 sm:min-h-[540px] sm:px-10 sm:pb-10 sm:pt-72 lg:min-h-[560px] lg:px-14 lg:pb-14 lg:pt-24">
+          {/* Factory photo: top band on mobile, right side on desktop. It fades into the blue so the copy sits on a clean background. */}
+          <div className="absolute inset-x-0 top-0 -z-10 h-56 sm:h-72 lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[58%]" aria-hidden="true">
             <Image
-              src="/images/hero.jpg"
+              src="/images/photos/factory.webp"
               alt=""
               fill
               priority
-              sizes="(max-width: 1248px) 100vw, 1200px"
-              className="hero-zoom object-cover object-[65%_center] sm:object-center"
+              sizes="(max-width: 1024px) 100vw, 700px"
+              className="object-cover object-[25%_center]"
             />
-            {/* single scrim for text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/85 via-navy-deep/40 to-navy-deep/5" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/20 to-transparent lg:bg-gradient-to-r lg:from-brand lg:via-brand/30 lg:to-transparent" />
           </div>
 
           <div className="grid w-full grid-cols-1 items-end gap-8 lg:grid-cols-12">
