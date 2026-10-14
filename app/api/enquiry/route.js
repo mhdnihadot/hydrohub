@@ -1,5 +1,6 @@
-// Receives enquiry form submissions.
-// TODO: forward to email / CRM / WhatsApp — for now it validates and logs on the server.
+// Receives enquiry form submissions: validates, emails the company inbox, and sends the visitor a thank-you.
+// Email settings live in environment variables (see .env.example and lib/mailer.js).
+import { mailConfigured, sendCompanyNotification, sendThankYou } from "@/lib/mailer";
 
 const clean = (v, max) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
@@ -28,14 +29,40 @@ export async function POST(request) {
   if (!/^[0-9+()\s-]{7,20}$/.test(enquiry.phone)) {
     return Response.json({ success: false, message: "Please enter a valid phone number." }, { status: 400 });
   }
-  if (enquiry.contact === "Email" && !enquiry.email) {
-    return Response.json({ success: false, message: "Please add your email so we can reply." }, { status: 400 });
-  }
-  if (enquiry.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enquiry.email)) {
+  if (!enquiry.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enquiry.email)) {
     return Response.json({ success: false, message: "Please enter a valid email." }, { status: 400 });
   }
 
-  console.log("[enquiry]", enquiry);
+  if (!mailConfigured()) {
+    // Local development without email settings: keep the form usable and log instead.
+    if (process.env.NODE_ENV !== "production") {
+      console.log("[enquiry] email not configured, logging only:", enquiry);
+      return Response.json({ success: true, message: "Enquiry received", data: { receivedAt: enquiry.receivedAt } });
+    }
+    console.error("[enquiry] email is not configured (SMTP_* / ENQUIRY_TO missing)");
+    return Response.json(
+      { success: false, message: "Sorry, we couldn't send your enquiry right now. Please email us directly." },
+      { status: 500 }
+    );
+  }
+
+  // The company must receive the enquiry; if that fails, tell the visitor so they can try again.
+  try {
+    await sendCompanyNotification(enquiry);
+  } catch (err) {
+    console.error("[enquiry] company notification failed:", err);
+    return Response.json(
+      { success: false, message: "Sorry, we couldn't send your enquiry right now. Please try again shortly." },
+      { status: 502 }
+    );
+  }
+
+  // The thank-you is a courtesy: a failure here shouldn't fail an enquiry the company already has.
+  try {
+    await sendThankYou(enquiry);
+  } catch (err) {
+    console.error("[enquiry] thank-you email failed:", err);
+  }
 
   return Response.json({ success: true, message: "Enquiry received", data: { receivedAt: enquiry.receivedAt } });
 }

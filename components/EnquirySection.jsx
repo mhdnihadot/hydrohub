@@ -4,7 +4,7 @@ import EnquiryForm from "./EnquiryForm";
 import { Reveal, TextReveal } from "./motion";
 
 const contacts = [
-  { Icon: Mail, label: "Email", value: "info@hydrohubindustries.in", href: "mailto:info@hydrohubindustries.in" },
+  { Icon: Mail, label: "Email", value: "info@hydrohubindustries.com", href: "mailto:info@hydrohubindustries.com" },
   {
     Icon: MapPin,
     label: "Address",

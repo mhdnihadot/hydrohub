@@ -1,6 +1,6 @@
 // Contact details and social links, shared by the navbar menu and the footer.
 
-export const email = { label: "info@hydrohubindustries.in", href: "mailto:info@hydrohubindustries.in" };
+export const email = { label: "info@hydrohubindustries.com", href: "mailto:info@hydrohubindustries.com" };
 
 // lucide v1 ships no brand icons, so these are small inline marks.
 export const socials = [

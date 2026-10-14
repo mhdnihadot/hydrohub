@@ -170,8 +170,8 @@ export default function EnquiryForm({ defaultProduct = "", defaultInterest = "",
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block sm:col-span-2">
-          <Label optional={contact !== "Email"}>Email</Label>
-          <input name="email" type="email" required={contact === "Email"} autoComplete="email" placeholder="you@example.com" className={fieldCls} />
+          <Label>Email</Label>
+          <input name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={fieldCls} />
         </label>
       </div>
 
